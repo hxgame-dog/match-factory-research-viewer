@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "generatedBy": "scripts/build_topic_analysis.py",
   "sections": {
     "levels": {
@@ -1172,7 +1172,7 @@
   "researchReport": {
     "title": "逆向研究专题报告",
     "subtitle": "关卡模板 · 计费与礼包 · 广告版位 · 动态难度",
-    "generatedNote": "证据来自离线包体 + il2cpp_hints（类名/字符串/行样例）及 lvl_protobuf_schema；不含服务端实时价格、完整 SKU 列表与线上 AB 结果。",
+    "generatedNote": "证据来自离线包体 + il2cpp_hints（类名/字符串/行样例）及 lvl_protobuf_schema；第 1 节含关卡模板表全表数值自动摘要；第 2–3 节含 DEX+il2cpp 与专题页一致的分桶命中量。不含服务端实时价格、完整 SKU 列表与线上 AB 结果。",
     "limitations": "商城「每一个计费点」的 SKU 与定价由 Google Play / 第三方收银台与服务器 offer 下发，本仓库无法仅从静态文件枚举全量；下列为客户端可见的架构与命名线索。",
     "sections": [
       {
@@ -1181,7 +1181,12 @@
         "paragraphs": [
           "「关卡模板」在包内对应无表头的 `level_templates_normal.csv` / `level_templates_ease.csv`，ingest 后列为 `col_0..`。结合 `LevelData` Protobuf 字段（见 `lvl_protobuf_schema.json` 与 `/lvl` 页 decode_raw）：`LevelBaseData`（多为 `*_00.lvl`）描述关卡号、Goal/Board 最大尺寸等基底；`LevelData`（多为 `*_01+`）携带 `Name`、`Duration`、`Ease`、`Difficulty`、`Goals`、`Board`、`SeedRules`。",
           "「组合方式」可归纳为：① 静态行：模板 CSV 提供数值行（与 `col_*` 对齐，语义需对照 `LevelDataParserUtil`）；② 二进制层：同一 `levelId` 多文件 `_00`/`_01`… 变体，且 `Levels` 与 `DLCFallbackLevels` 两套目录并存（索引中可重复计数）；③ 运行时扩展：`DynamicLevel*`、`LevelBundle*`、`ItemDlcFallbackLevelDataLoader` 等类名表明存在动态关卡下载、DLC 回退与关卡包更新路径，与 Addressables/catalog 联动。",
-          "专题页「关卡数值」Tab 对 normal / ease 的 min/median/max 对照，用于观察两套模板在相同列上的分布差异（ease 常为难度或时长调节维度之一，需代码级确认）。"
+          "专题页「关卡数值」Tab 对 normal / ease 的 min/median/max 条带图便于快速扫分布；下列为**全表整数列**自动统计摘要，可与 Tab 对照（Tab 默认各取前 2000 行抽样）。",
+          "专题页「关卡数值」中的 min/median/max 条带图默认基于各模式前 2000 行抽样；**以下段落基于全表**：normal 2000 行、ease 2000 行。对每一列仅统计可解析为整数的单元格，空值或非整数不计入该列样本量 n。",
+          "`col_0`（模板行 ID 轴）：normal 整数样本 n=2000，区间 [1, 2000]，中位数 1001；ease n=2000，区间 [1, 2000]，中位数 1001。与「每行一条模板」索引一致。",
+          "`col_1`（样本中呈集中整数分布，常见解读为时长类秒数，需对照 LevelDataParserUtil 确认）：normal 中位 150、区间 [90, 300]；ease 中位 150、区间 [90, 300]。两模式极值与中位接近时，说明全局时长带一致，差异更多落在后续列。",
+          "ease 相对 normal **中位数下降**的列（两表整数样本均 ≥12% 行数或至少 50 行）按降幅排序，前几项为：col_10（normal 中位 21→ease 18；max 174→156）；col_11（normal 中位 21→ease 18；max 105→99）；col_13（normal 中位 18→ease 15；max 60→60）；col_14（normal 中位 18→ease 15；max 60→60）；col_17（normal 中位 15→ease 12；max 54→36）；col_18（normal 中位 15→ease 12；max 39→39）；col_19（normal 中位 15→ease 12；max 60→45）；col_20（normal 中位 12→ease 9；max 30→30）；col_21（normal 中位 12→ease 9；max 72→36）。可归纳：宽松模板在多个数值维度上系统性地低于普通模板；各列对应棋盘/目标/标记位仍需反编译对齐。",
+          "以下列在全表范围内整数稀疏（任一侧 n 低于约 45% 行数），更像条件字段或仅部分关卡生效的参数，与专题页上 `n` 明显小于 2000 的现象一致：col_28（n_normal=22，n_ease=22）；col_27（n_normal=35，n_ease=35）；col_26（n_normal=53，n_ease=53）；col_25（n_normal=79，n_ease=79）；col_24（n_normal=113，n_ease=113）；col_23（n_normal=172，n_ease=172）；col_9（n_normal=201，n_ease=201）；col_22（n_normal=231，n_ease=230）；col_21（n_normal=332，n_ease=331）；col_8（n_normal=397，n_ease=397）；col_20（n_normal=429，n_ease=427）；col_19（n_normal=631，n_ease=630）；col_7（n_normal=784，n_ease=784）；col_18（n_normal=828，n_ease=826）。"
         ],
         "schemaFieldSummary": [
           "No (#1)",
@@ -1248,6 +1253,7 @@
         "id": "monetization",
         "heading": "2. 计费点、商城与动态礼包逻辑（客户端视角）",
         "paragraphs": [
+          "在本包 `dex_strings_sdk.json` 与 `il2cpp_strings_sdk.json` 合并候选中，去重且最短长度过滤后约 **455** 条可读片段；按与「专题分析→计费点」相同的关键字规则（先匹配先入桶）统计：Google Play 计费相关 304 条、AppsFlyer 收入归因 2 条、Meta/Facebook 相关 0 条、Unity/Zynga 商店相关 3 条，未命中上述计费桶的 146 条。以上为**客户端字符串线索条数**，不是 SKU 或 offer 条目数；全文检索见 `/sdk`。",
           "Google Play Billing / `SkuDetails` / `queryPurchases` 等 DEX 字符串（见 `/sdk` 与专题「计费点」分桶）说明内购走标准 BillingClient；`AppsFlyer` Purchase Connector 用于归因回传，不等于商品定义源。",
           "Il2Cpp 中出现 `GetOffersInfoMessage`、`GetStarterOfferInfoResponseMessage`、`GetSpecialOfferInfoResponseMessage`、`PurchaseSpecialOfferMessage`、`SetStarterOfferStateMessage` 等类型名，表明 Offer 元数据与状态以网络消息拉取/同步，客户端只负责展示与发起购买；`Cannot find offer data for full sync request! OfferId` 等日志串说明 offer 由 OfferId 主键驱动。",
           "商城 UI 侧可见 `ShopBundleItemView`、`ShopBundleItemViewCollection`；字符串侧出现「Beginner Bundle」「Giant Bundle」「Legendary Bundle」等命名型商品、`Datasets/FlashOffer`、`Datasets/StarterOffer`、`ABTest_Shop`、`ABTest_FlashOffer`、`ABTest_StarterOffer`、`ABTest_SpecialOffer` —— 说明礼包/闪购/首购与 AB 实验开关绑定，具体开哪些 bundle 由配置/实验决定，而非硬编码单一列表。",
@@ -1338,6 +1344,7 @@
         "id": "ads",
         "heading": "3. 游戏内广告点位（命名与 UI 线索）",
         "paragraphs": [
+          "同一 SDK 候选集上，按「专题分析→广告」规则统计：AppLovin/MAX 113 条、AdMob/Google Mobile Ads 1 条、Unity Ads 14 条、IronSource 1 条、版位通用词（rewarded/interstitial/banner/placement 等，规则靠后）8 条，其余 318 条。分桶互斥：先匹配的 SDK 桶会占用同时含版位关键字的一行，版位桶可视作下限估计；精确 placement/AdUnit 多在远端配置。",
           "字符串字面量中出现成体系的 Banner* 前缀：`BannerCoin`、`BannerPreLevel`、`BannerCoinBooster`、`BannerCoinPreLevel`、`BannerPreLevelBooster` 等，可解读为：金币条、进关前、与道具(Booster)组合的横幅广告位命名习惯（具体瀑布与 eCPM 仍在 mediation 配置中）。",
           "`MergeEventRewardedTreeItem`、`MergeRewardedItemClaimData` 等类名表明合成/活动树上存在激励视频领奖路径；与 `IAPButton` 同现于字符串表，说明部分入口同时承担 IAP 与广告变现。",
           "DEX/il2cpp 通用 SDK 关键字（MAX、AdMob、UnityAds、IronSource、rewarded/interstitial）见专题「广告」分桶；精确 placement id 往往在运行时由远程配置注入，静态字符串仅为子集。"

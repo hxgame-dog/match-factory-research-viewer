@@ -94,14 +94,19 @@ def section_levels() -> dict:
     }
 
 
+def _collect_int_column(rows: list[dict], col: str) -> list[int]:
+    vals: list[int] = []
+    for r in rows:
+        v = str(r.get(col, "")).strip()
+        if v.isdigit() or (v.startswith("-") and v[1:].isdigit()):
+            vals.append(int(v))
+    return vals
+
+
 def numeric_col_stats(rows: list[dict], col_keys: list[str], sample: int = 2000) -> dict:
     out: dict = {}
     for ck in col_keys:
-        vals: list[int] = []
-        for r in rows[:sample]:
-            v = str(r.get(ck, "")).strip()
-            if v.isdigit() or (v.startswith("-") and v[1:].isdigit()):
-                vals.append(int(v))
+        vals = _collect_int_column(rows[:sample], ck)
         if len(vals) < 5:
             continue
         vals.sort()
@@ -136,6 +141,99 @@ def section_level_numerics() -> dict:
             "numericColumnStats": stats,
         }
     return out
+
+
+def level_numerics_research_paragraphs() -> list[str]:
+    """基于全表整数列统计，为「研究报告」生成可复核的关卡数值结论（与专题 Tab 互补）。"""
+    normal = load_json("level_templates_normal.json")
+    ease = load_json("level_templates_ease.json")
+    if not isinstance(normal, list) or not isinstance(ease, list) or not normal or not ease:
+        return ["未能加载 level_templates_normal.json / level_templates_ease.json，本段自动数值对照跳过。"]
+    rn, re_ = len(normal), len(ease)
+    cols_n = {k for k in normal[0].keys() if k.startswith("col_")}
+    cols_e = {k for k in ease[0].keys() if k.startswith("col_")}
+    cols = sorted(cols_n & cols_e, key=lambda x: int(x.split("_")[1]))
+    if not cols:
+        return ["模板表无 col_* 列名，跳过数值分析。"]
+
+    paras: list[str] = []
+    paras.append(
+        f"专题页「关卡数值」中的 min/median/max 条带图默认基于各模式前 2000 行抽样；**以下段落基于全表**：normal {rn} 行、ease {re_} 行。对每一列仅统计可解析为整数的单元格，空值或非整数不计入该列样本量 n。"
+    )
+
+    v0n = _collect_int_column(normal, "col_0")
+    v0e = _collect_int_column(ease, "col_0")
+    if len(v0n) >= 5 and len(v0e) >= 5:
+        v0n.sort()
+        v0e.sort()
+        paras.append(
+            f"`col_0`（模板行 ID 轴）：normal 整数样本 n={len(v0n)}，区间 [{v0n[0]}, {v0n[-1]}]，中位数 {v0n[len(v0n) // 2]}；ease n={len(v0e)}，区间 [{v0e[0]}, {v0e[-1]}]，中位数 {v0e[len(v0e) // 2]}。与「每行一条模板」索引一致。"
+        )
+
+    v1n = _collect_int_column(normal, "col_1")
+    v1e = _collect_int_column(ease, "col_1")
+    if len(v1n) >= 5 and len(v1e) >= 5:
+        v1n.sort()
+        v1e.sort()
+        paras.append(
+            f"`col_1`（样本中呈集中整数分布，常见解读为时长类秒数，需对照 LevelDataParserUtil 确认）：normal 中位 {v1n[len(v1n) // 2]}、区间 [{v1n[0]}, {v1n[-1]}]；ease 中位 {v1e[len(v1e) // 2]}、区间 [{v1e[0]}, {v1e[-1]}]。两模式极值与中位接近时，说明全局时长带一致，差异更多落在后续列。"
+        )
+
+    min_rows = min(rn, re_)
+    sparse_thr = 0.45
+    sparse: list[tuple[str, int, int]] = []
+    relax: list[tuple[str, int, int, int, int]] = []
+    tighten: list[tuple[str, int, int]] = []
+
+    for col in cols:
+        if col in ("col_0", "col_1"):
+            continue
+        vn = _collect_int_column(normal, col)
+        ve = _collect_int_column(ease, col)
+        if len(vn) < 5 or len(ve) < 5:
+            continue
+        vn.sort()
+        ve.sort()
+        med_n, med_e = vn[len(vn) // 2], ve[len(ve) // 2]
+        max_n, max_e = vn[-1], ve[-1]
+        if len(vn) < rn * sparse_thr or len(ve) < re_ * sparse_thr:
+            sparse.append((col, len(vn), len(ve)))
+        need = max(50, int(min_rows * 0.12))
+        if len(vn) >= need and len(ve) >= need and med_e < med_n:
+            relax.append((col, med_n, med_e, max_n, max_e))
+        if len(vn) >= need and len(ve) >= need and med_e > med_n:
+            tighten.append((col, med_n, med_e))
+
+    relax.sort(key=lambda x: x[1] - x[2], reverse=True)
+    if relax:
+        bits = [
+            f"{c}（normal 中位 {mn}→ease {me}；max {mxn}→{mxe}）"
+            for c, mn, me, mxn, mxe in relax[:10]
+        ]
+        paras.append(
+            "ease 相对 normal **中位数下降**的列（两表整数样本均 ≥12% 行数或至少 50 行）按降幅排序，前几项为："
+            + "；".join(bits)
+            + "。可归纳：宽松模板在多个数值维度上系统性地低于普通模板；各列对应棋盘/目标/标记位仍需反编译对齐。"
+        )
+
+    if sparse:
+        sparse.sort(key=lambda t: min(t[1], t[2]))
+        bits2 = [f"{c}（n_normal={a}，n_ease={b}）" for c, a, b in sparse[:14]]
+        paras.append(
+            "以下列在全表范围内整数稀疏（任一侧 n 低于约 45% 行数），更像条件字段或仅部分关卡生效的参数，与专题页上 `n` 明显小于 2000 的现象一致："
+            + "；".join(bits2)
+            + "。"
+        )
+
+    if tighten:
+        tighten.sort(key=lambda x: x[2] - x[1], reverse=True)
+        bits3 = [f"{c}（{mn}→{me}）" for c, mn, me in tighten[:8]]
+        paras.append(
+            "少数列在 ease 中位数**高于** normal：" + "；".join(bits3)
+            + "。说明该列不一定单调表示「难度」，或为边界模板/噪声；建议按模板 ID 对齐抽查 `.lvl` 与运行时 Ease 字段。"
+        )
+
+    return paras
 
 
 def section_items() -> dict:
@@ -176,17 +274,58 @@ def classify_lines(lines: list[str], rules: list[tuple[str, re.Pattern]]) -> dic
     return buckets
 
 
+def classify_line_counts(lines: list[str], rules: list[tuple[str, re.Pattern]]) -> dict[str, int]:
+    """与 classify_lines 相同去重与匹配顺序，仅统计命中条数（不截断样本）。"""
+    counts: dict[str, int] = {name: 0 for name, _ in rules}
+    counts["其它"] = 0
+    seen: set[str] = set()
+    for raw in lines:
+        s = raw.strip()
+        if len(s) < 6 or s in seen:
+            continue
+        seen.add(s)
+        for name, pat in rules:
+            if pat.search(s):
+                counts[name] += 1
+                break
+        else:
+            counts["其它"] += 1
+    return counts
+
+
+def dedup_sdk_candidate_count(lines: list[str]) -> int:
+    seen: set[str] = set()
+    n = 0
+    for raw in lines:
+        s = raw.strip()
+        if len(s) < 6 or s in seen:
+            continue
+        seen.add(s)
+        n += 1
+    return n
+
+
+MONETIZATION_STRING_RULES: list[tuple[str, re.Pattern]] = [
+    ("GooglePlayBilling", re.compile(r"Billing|SkuDetails|Sku|purchase|subscription|InApp|PlayBilling|queryPurchases", re.I)),
+    ("AppsFlyer_Revenue", re.compile(r"AppsFlyer|AFInApp|AFPurchase|PurchaseConnector", re.I)),
+    ("Meta_Facebook", re.compile(r"facebook|FBSDK|AudienceNetwork", re.I)),
+    ("Unity_Zynga_SDK", re.compile(r"Zynga|UnityPurchasing|IAP|Store", re.I)),
+]
+
+AD_STRING_RULES: list[tuple[str, re.Pattern]] = [
+    ("AppLovin_MAX", re.compile(r"applovin|APPLOVIN_MAX|MaxSdk|MAX_", re.I)),
+    ("AdMob_Google", re.compile(r"admob|AdRequest|MobileAds|GoogleMobileAds", re.I)),
+    ("UnityAds", re.compile(r"UnityAds|unityads|UnityEngine\.Advertisements", re.I)),
+    ("IronSource", re.compile(r"ironsource|IronSource", re.I)),
+    ("Placement_Rewarded", re.compile(r"rewarded|interstitial|banner|placement|ad_unit|AdUnit", re.I)),
+]
+
+
 def section_monetization() -> dict:
     dex = load_json("dex_strings_sdk.json") or {}
     il2 = load_json("il2cpp_strings_sdk.json") or {}
     lines = list(dex.get("candidates") or []) + list(il2.get("candidates") or [])
-    rules = [
-        ("GooglePlayBilling", re.compile(r"Billing|SkuDetails|Sku|purchase|subscription|InApp|PlayBilling|queryPurchases", re.I)),
-        ("AppsFlyer_Revenue", re.compile(r"AppsFlyer|AFInApp|AFPurchase|PurchaseConnector", re.I)),
-        ("Meta_Facebook", re.compile(r"facebook|FBSDK|AudienceNetwork", re.I)),
-        ("Unity_Zynga_SDK", re.compile(r"Zynga|UnityPurchasing|IAP|Store", re.I)),
-    ]
-    buckets = classify_lines(lines, rules)
+    buckets = classify_lines(lines, MONETIZATION_STRING_RULES)
     return {
         "title": "计费点（客户端字符串证据）",
         "reverseNote": "来自 DEX + libil2cpp strings 过滤，非商店定价表；完整 SKU 与 offer 多在服务端或加密配置。",
@@ -199,14 +338,7 @@ def section_ads() -> dict:
     dex = load_json("dex_strings_sdk.json") or {}
     il2 = load_json("il2cpp_strings_sdk.json") or {}
     lines = list(dex.get("candidates") or []) + list(il2.get("candidates") or [])
-    rules = [
-        ("AppLovin_MAX", re.compile(r"applovin|APPLOVIN_MAX|MaxSdk|MAX_", re.I)),
-        ("AdMob_Google", re.compile(r"admob|AdRequest|MobileAds|GoogleMobileAds", re.I)),
-        ("UnityAds", re.compile(r"UnityAds|unityads|UnityEngine\.Advertisements", re.I)),
-        ("IronSource", re.compile(r"ironsource|IronSource", re.I)),
-        ("Placement_Rewarded", re.compile(r"rewarded|interstitial|banner|placement|ad_unit|AdUnit", re.I)),
-    ]
-    buckets = classify_lines(lines, rules)
+    buckets = classify_lines(lines, AD_STRING_RULES)
     return {
         "title": "广告点（客户端字符串证据）",
         "reverseNote": "聚合 SDK 与版位相关关键字；真实 placement 名需结合运行时配置与远程 bundle。",
@@ -367,20 +499,44 @@ def build_research_report() -> dict:
     msgs = (schema.get("messages") or {}) if isinstance(schema, dict) else {}
     level_fields = [f"{m.get('field')} (#{m.get('number')})" for m in msgs.get("LevelData", [])[:12]]
 
+    dex_sdk = load_json("dex_strings_sdk.json") or {}
+    il2_sdk = load_json("il2cpp_strings_sdk.json") or {}
+    sdk_lines = list(dex_sdk.get("candidates") or []) + list(il2_sdk.get("candidates") or [])
+    n_sdk = dedup_sdk_candidate_count(sdk_lines)
+    mon_counts = classify_line_counts(sdk_lines, MONETIZATION_STRING_RULES)
+    ad_counts = classify_line_counts(sdk_lines, AD_STRING_RULES)
+    numerics_paras = level_numerics_research_paragraphs()
+
+    mon_para0 = (
+        f"在本包 `dex_strings_sdk.json` 与 `il2cpp_strings_sdk.json` 合并候选中，去重且最短长度过滤后约 **{n_sdk}** 条可读片段；按与「专题分析→计费点」相同的关键字规则（先匹配先入桶）统计："
+        f"Google Play 计费相关 {mon_counts.get('GooglePlayBilling', 0)} 条、AppsFlyer 收入归因 {mon_counts.get('AppsFlyer_Revenue', 0)} 条、"
+        f"Meta/Facebook 相关 {mon_counts.get('Meta_Facebook', 0)} 条、Unity/Zynga 商店相关 {mon_counts.get('Unity_Zynga_SDK', 0)} 条，"
+        f"未命中上述计费桶的 {mon_counts.get('其它', 0)} 条。以上为**客户端字符串线索条数**，不是 SKU 或 offer 条目数；全文检索见 `/sdk`。"
+    )
+    ad_para0 = (
+        f"同一 SDK 候选集上，按「专题分析→广告」规则统计：AppLovin/MAX {ad_counts.get('AppLovin_MAX', 0)} 条、AdMob/Google Mobile Ads {ad_counts.get('AdMob_Google', 0)} 条、"
+        f"Unity Ads {ad_counts.get('UnityAds', 0)} 条、IronSource {ad_counts.get('IronSource', 0)} 条、"
+        f"版位通用词（rewarded/interstitial/banner/placement 等，规则靠后）{ad_counts.get('Placement_Rewarded', 0)} 条，其余 {ad_counts.get('其它', 0)} 条。"
+        f"分桶互斥：先匹配的 SDK 桶会占用同时含版位关键字的一行，版位桶可视作下限估计；精确 placement/AdUnit 多在远端配置。"
+    )
+
+    level_tpl_paragraphs = [
+        "「关卡模板」在包内对应无表头的 `level_templates_normal.csv` / `level_templates_ease.csv`，ingest 后列为 `col_0..`。结合 `LevelData` Protobuf 字段（见 `lvl_protobuf_schema.json` 与 `/lvl` 页 decode_raw）：`LevelBaseData`（多为 `*_00.lvl`）描述关卡号、Goal/Board 最大尺寸等基底；`LevelData`（多为 `*_01+`）携带 `Name`、`Duration`、`Ease`、`Difficulty`、`Goals`、`Board`、`SeedRules`。",
+        "「组合方式」可归纳为：① 静态行：模板 CSV 提供数值行（与 `col_*` 对齐，语义需对照 `LevelDataParserUtil`）；② 二进制层：同一 `levelId` 多文件 `_00`/`_01`… 变体，且 `Levels` 与 `DLCFallbackLevels` 两套目录并存（索引中可重复计数）；③ 运行时扩展：`DynamicLevel*`、`LevelBundle*`、`ItemDlcFallbackLevelDataLoader` 等类名表明存在动态关卡下载、DLC 回退与关卡包更新路径，与 Addressables/catalog 联动。",
+        "专题页「关卡数值」Tab 对 normal / ease 的 min/median/max 条带图便于快速扫分布；下列为**全表整数列**自动统计摘要，可与 Tab 对照（Tab 默认各取前 2000 行抽样）。",
+    ]
+    level_tpl_paragraphs.extend(numerics_paras)
+
     return {
         "title": "逆向研究专题报告",
         "subtitle": "关卡模板 · 计费与礼包 · 广告版位 · 动态难度",
-        "generatedNote": "证据来自离线包体 + il2cpp_hints（类名/字符串/行样例）及 lvl_protobuf_schema；不含服务端实时价格、完整 SKU 列表与线上 AB 结果。",
+        "generatedNote": "证据来自离线包体 + il2cpp_hints（类名/字符串/行样例）及 lvl_protobuf_schema；第 1 节含关卡模板表全表数值自动摘要；第 2–3 节含 DEX+il2cpp 与专题页一致的分桶命中量。不含服务端实时价格、完整 SKU 列表与线上 AB 结果。",
         "limitations": "商城「每一个计费点」的 SKU 与定价由 Google Play / 第三方收银台与服务器 offer 下发，本仓库无法仅从静态文件枚举全量；下列为客户端可见的架构与命名线索。",
         "sections": [
             {
                 "id": "levelTemplates",
                 "heading": "1. 关卡模板设定逻辑与关卡配置组合",
-                "paragraphs": [
-                    "「关卡模板」在包内对应无表头的 `level_templates_normal.csv` / `level_templates_ease.csv`，ingest 后列为 `col_0..`。结合 `LevelData` Protobuf 字段（见 `lvl_protobuf_schema.json` 与 `/lvl` 页 decode_raw）：`LevelBaseData`（多为 `*_00.lvl`）描述关卡号、Goal/Board 最大尺寸等基底；`LevelData`（多为 `*_01+`）携带 `Name`、`Duration`、`Ease`、`Difficulty`、`Goals`、`Board`、`SeedRules`。",
-                    "「组合方式」可归纳为：① 静态行：模板 CSV 提供数值行（与 `col_*` 对齐，语义需对照 `LevelDataParserUtil`）；② 二进制层：同一 `levelId` 多文件 `_00`/`_01`… 变体，且 `Levels` 与 `DLCFallbackLevels` 两套目录并存（索引中可重复计数）；③ 运行时扩展：`DynamicLevel*`、`LevelBundle*`、`ItemDlcFallbackLevelDataLoader` 等类名表明存在动态关卡下载、DLC 回退与关卡包更新路径，与 Addressables/catalog 联动。",
-                    "专题页「关卡数值」Tab 对 normal / ease 的 min/median/max 对照，用于观察两套模板在相同列上的分布差异（ease 常为难度或时长调节维度之一，需代码级确认）。",
-                ],
+                "paragraphs": level_tpl_paragraphs,
                 "schemaFieldSummary": level_fields,
                 "evidenceClasses": ev_level_classes,
                 "evidenceStrings": ev_level_strings,
@@ -389,6 +545,7 @@ def build_research_report() -> dict:
                 "id": "monetization",
                 "heading": "2. 计费点、商城与动态礼包逻辑（客户端视角）",
                 "paragraphs": [
+                    mon_para0,
                     "Google Play Billing / `SkuDetails` / `queryPurchases` 等 DEX 字符串（见 `/sdk` 与专题「计费点」分桶）说明内购走标准 BillingClient；`AppsFlyer` Purchase Connector 用于归因回传，不等于商品定义源。",
                     "Il2Cpp 中出现 `GetOffersInfoMessage`、`GetStarterOfferInfoResponseMessage`、`GetSpecialOfferInfoResponseMessage`、`PurchaseSpecialOfferMessage`、`SetStarterOfferStateMessage` 等类型名，表明 Offer 元数据与状态以网络消息拉取/同步，客户端只负责展示与发起购买；`Cannot find offer data for full sync request! OfferId` 等日志串说明 offer 由 OfferId 主键驱动。",
                     "商城 UI 侧可见 `ShopBundleItemView`、`ShopBundleItemViewCollection`；字符串侧出现「Beginner Bundle」「Giant Bundle」「Legendary Bundle」等命名型商品、`Datasets/FlashOffer`、`Datasets/StarterOffer`、`ABTest_Shop`、`ABTest_FlashOffer`、`ABTest_StarterOffer`、`ABTest_SpecialOffer` —— 说明礼包/闪购/首购与 AB 实验开关绑定，具体开哪些 bundle 由配置/实验决定，而非硬编码单一列表。",
@@ -402,6 +559,7 @@ def build_research_report() -> dict:
                 "id": "ads",
                 "heading": "3. 游戏内广告点位（命名与 UI 线索）",
                 "paragraphs": [
+                    ad_para0,
                     "字符串字面量中出现成体系的 Banner* 前缀：`BannerCoin`、`BannerPreLevel`、`BannerCoinBooster`、`BannerCoinPreLevel`、`BannerPreLevelBooster` 等，可解读为：金币条、进关前、与道具(Booster)组合的横幅广告位命名习惯（具体瀑布与 eCPM 仍在 mediation 配置中）。",
                     "`MergeEventRewardedTreeItem`、`MergeRewardedItemClaimData` 等类名表明合成/活动树上存在激励视频领奖路径；与 `IAPButton` 同现于字符串表，说明部分入口同时承担 IAP 与广告变现。",
                     "DEX/il2cpp 通用 SDK 关键字（MAX、AdMob、UnityAds、IronSource、rewarded/interstitial）见专题「广告」分桶；精确 placement id 往往在运行时由远程配置注入，静态字符串仅为子集。",
@@ -531,7 +689,7 @@ def section_data_diagnostics() -> dict:
 
 def main() -> None:
     payload = {
-        "version": 4,
+        "version": 5,
         "generatedBy": "scripts/build_topic_analysis.py",
         "sections": {
             "levels": section_levels(),

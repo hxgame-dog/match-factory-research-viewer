@@ -1,0 +1,2604 @@
+{
+  "datapack": {
+    "path": "/Users/fulei/Downloads/match-factory-1-64-246/UnityDataAssetPack/assets/bin/Data/datapack.unity3d",
+    "sizeBytes": 109425786,
+    "objectsScanned": 4000,
+    "typeCount": 21,
+    "topTypes": [
+      {
+        "type": "Sprite",
+        "count": 2626
+      },
+      {
+        "type": "AnimationClip",
+        "count": 340
+      },
+      {
+        "type": "Texture2D",
+        "count": 332
+      },
+      {
+        "type": "AudioClip",
+        "count": 284
+      },
+      {
+        "type": "Material",
+        "count": 168
+      },
+      {
+        "type": "AnimatorController",
+        "count": 116
+      },
+      {
+        "type": "Mesh",
+        "count": 66
+      },
+      {
+        "type": "Shader",
+        "count": 25
+      },
+      {
+        "type": "TextAsset",
+        "count": 14
+      },
+      {
+        "type": "Avatar",
+        "count": 8
+      },
+      {
+        "type": "MonoBehaviour",
+        "count": 5
+      },
+      {
+        "type": "GameObject",
+        "count": 4
+      },
+      {
+        "type": "Transform",
+        "count": 4
+      },
+      {
+        "type": "PreloadData",
+        "count": 1
+      },
+      {
+        "type": "Camera",
+        "count": 1
+      },
+      {
+        "type": "AudioListener",
+        "count": 1
+      },
+      {
+        "type": "RenderSettings",
+        "count": 1
+      },
+      {
+        "type": "LightmapSettings",
+        "count": 1
+      },
+      {
+        "type": "NavMeshSettings",
+        "count": 1
+      },
+      {
+        "type": "Font",
+        "count": 1
+      },
+      {
+        "type": "PhysicMaterial",
+        "count": 1
+      }
+    ],
+    "samples": [
+      {
+        "type": "GameObject",
+        "name": "EventSystem",
+        "container": "None"
+      },
+      {
+        "type": "GameObject",
+        "name": "CameraPivot",
+        "container": "None"
+      },
+      {
+        "type": "GameObject",
+        "name": "MainCamera",
+        "container": "None"
+      },
+      {
+        "type": "GameObject",
+        "name": "SceneManager",
+        "container": "None"
+      },
+      {
+        "type": "MonoBehaviour",
+        "name": "",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "AguBlack SDF Atlas",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "LotteMartHappy-Bold SDF Atlas",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x512-ASTC 6x6-CollectionDuckAtlas-05000eb6",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-FactoryPassAtlas-073844ee",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x1024-ASTC 6x6-PackRoadAtlas-0a3684f4",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x2048-ASTC 4x4-GameplayAtlas-0fece8e3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x1024-ASTC 6x6-MissionCenterMachine5Atlas-10af515b",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x2048-ASTC 6x6-DailyBonusAtlas-24d54161",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x1024-ASTC 4x4-MissionCenterMachine1Atlas-2bda7698",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x512-ASTC 6x6-MergeInfoDialogAtlas-2c0e0041",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-TeamBattleAtlas-2fb2c8e7",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x2048-ASTC 4x4-SuperBallAtlas-33ae62d5",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x4096-ASTC 4x4-SharedAtlas-546f5042",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x2048-ASTC 6x6-StarRaceAtlas-5b81affd",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x4096-ASTC 6x6-SuperBallThunderAtlas-5cf241f7",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x1024-ASTC 6x6-KeyChallengeAtlas-6454cf2f",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-JetpackRideAtlas-669ce53c",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-MineDashAtlas-67387453",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 4x4-CollectionPageAtlas-750b2703",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x2048-ASTC 6x6-HelmetRushJoinDialogAtlas-79988390",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-SpaceTripAtlas-7c849ba6",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-256x256-ASTC 4x4-CoinFrenzyCoinAtlas-7c92c078",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x512-ASTC 4x4-ProfileAtlas-7fbdb9af",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x2048-ASTC 6x6-HelmetRushCommonAtlas-8092ccc0",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x1024-ASTC 6x6-DLCCommonAssetParticleSpriteAtlas-84aa7ef4",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x1024-ASTC 6x6-MissionCenterMachine4Atlas-95371497",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x1024-ASTC 4x4-MissionCenterMachine2Atlas-96bb3c45",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-CollectionGrandChestAtlas-97526f3a",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x1024-ASTC 4x4-MissionCenterCommonMachineAtlas-b4e5c60a",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x1024-ASTC 6x6-MissionCenterMachine3Atlas-b74d8c1f",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-TreasureCaveAtlas-bc0210b3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x2048-ASTC 4x4-MissionCenterCommonDialogAtlas-be7ed3a9",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 4x4-CoinFrenzyAtlas-c7240e86",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x2048-ASTC 6x6-CollectionWildcardAtlas-c93ae3da",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-512x512-ASTC 6x6-DLCCommonAssetGenericSpriteAtlas-caabd7f6",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x2048-ASTC 4x4-DuckChestAtlas-cb99d847",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-2048x1024-ASTC 6x6-ParticlesAtlas-cd328a41",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x2048-ASTC 6x6-TeamChestAtlas-d8e30eed",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-1024x2048-ASTC 6x6-SuperBallDialogAdditiveAtlas-e3f8ad69",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-0-4096x4096-ASTC 4x4-MainSceneAtlas-f52bb3e5",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-1-1024x1024-ASTC 6x6-TeamBattleAtlas-2fb2c8e7",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-1-2048x2048-ASTC 6x6-MineDashAtlas-67387453",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-1-2048x2048-ASTC 6x6-SpaceTripAtlas-7c849ba6",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sactx-1-1024x2048-ASTC 6x6-TreasureCaveAtlas-bc0210b3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Default-Particle",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Default-ParticleSystem",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "InputFieldBackground",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "UIMask",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "freeze_effect_overlay",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_4_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Background",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "LoadingBackground",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "bg",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "crown_rush_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_2_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "FactoryPassJoinArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-10_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_12_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "drill_opponent",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_5_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-11_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "shadow",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Cave-Treasure_bg-downside-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "White1px",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "main_screen_bg_down",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Base_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "select_circle",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "BoxShadow_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "freeze_effect_circular_textured",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "LightningBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Bluepackage-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "setframe_2_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "BoxCoverShadow_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "gift_gold_frame",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_01",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Square",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "rate_us_new_image",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-11_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Ticket001",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "BronzeChestTexture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Bluepackage-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_pr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Box01_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Square",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "duck",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "CF_iconAnimRef_1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "pie_item",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "shine_gradient",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "freeze_effect_horizontal_textured",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Redpackage-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sball_popup_background.",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_11_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "shop_offer_ticket",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Redpackage-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "reveal_gradient",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "background",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_pink_car",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "SpringBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "light",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_04",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "MarathonKey4",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TeamChestBall",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "BaseShadow_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "logo-anim-Base",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_05",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "road_sweeper",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "offer_coin_stack",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TreasureCaveJoinArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "hourglass_fill",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "BoxCover_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "reveal_gradient_flipped",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_jp",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "profile_frame_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Alpha_spark",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Box_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "drill_player",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "ring",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "profile_frame_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "MarathonKey2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Purplepackage-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "SquareWithBottomPivot",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Cave-Treasure_bg-downside-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Greenpackage-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "gold-card",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_split_from_center_middle",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "lightningbooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Font Texture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_1_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "logo-anim-factory",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TreasureCaveLoseArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TeamGoalJoinArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "collection_notavailable_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "UIFoldoutClosed",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "marathonkey1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_green_car",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "SuperBall_ProgressBar_Inside",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "StarsBumpShine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "DuckGlass",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "freezeTimeEffect",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_15_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teamchestball",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "WildFrame",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Cave-Treasure_bg-upside-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Greenpackage-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "jetpack_ride_character_texture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "rounded_corner_mask",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spiral_128",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "11_front_door",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "InventoryAtlas",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Card_01_1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "WildCardForShine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "crown_rush_progress_bar",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "LVL5_Top_Texture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "team_ticket",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "SuperBallItemTexture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_9_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_join_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Road",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "swipe_02",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_7_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "helmet_rush_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "clockbooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "normalSuperBall_1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "gold_frame_shine-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "swipe_01",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "VacuumBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "package-3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Cave-Treasure_bg-water_transparency",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_13_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "main_screen_bg_holemask",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "UIFoldoutOpened",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-9_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "EP Outline logo",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "FreezeBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-4_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-12_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "CrownBumpShine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "GameplayBackground",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "MarathonKey3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "EmojiAtlas",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_right",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "RoadMask01",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_3_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Sprite Shape Fill",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_join_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "UICheckMark",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_middle",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "marathonkey3",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "gradient_vertical",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "metallicSuperBall_1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TeamChestBall",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Circle",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "megalightningbooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "setframe_1_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_14_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "RoadMask",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_split_from_center_left",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "ClockBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-12_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Purplepackage-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "bg",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "main_screen_bg_holemask-2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "GoldChestTexture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "glow1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TreasureCaveInfoBackground",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "jetpack_ride_jetpack_texture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "main_screen_bg_Up",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "sball_popup-Deactive_Background",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "FactoryPassFinishArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "ShuffleBooster",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "teambattle_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_split_from_center_right",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "UIElement8px",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "card-shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "MarathonKey1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_es",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "package-1_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-9_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_03",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "StarsShine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_6_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_02",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_pt",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "clockbooster_prelevel",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "grandprize_frame_Shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "marathonkey2",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_10_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "New_Team_Image",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "gold_frame_shine-1",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Purple_ProgressBar",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "badge",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "fillbar_left",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-10_shine_big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "member_frame_ball",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "marathonkey4",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "treasure_cave_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "SilverChestTexture",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "mine_dash_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "GoldCardFrameShine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "missioncenter_title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_8_Big",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "diamond_coin_06",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "clockbooster_ego",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "star_race_title_fr",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "ShinyTextGradient",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "Avatar_frame-4_shine",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "pie_sticker",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "factory_pass_bg",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "spacetrip_title_de",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_ko",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "badge",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "TreasureCaveLoadingBackground",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "title_en",
+        "container": "None"
+      },
+      {
+        "type": "Texture2D",
+        "name": "LightNovelPOP SDF Atlas",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "EmojiUnicodeLib",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "BotCollectionBadge",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "deletemeaftermerge",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "CoinFrenzyLastChanceRatios",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "DailyBonusDefaultData",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "LevelTable",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "StarterOffer",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "LocalizationData",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "FlashOffer",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "LotteMartHappyLicense",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "LineBreaking Leading Characters",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "Monotype Font Software End User License Agreement",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "ItemTypes",
+        "container": "None"
+      },
+      {
+        "type": "TextAsset",
+        "name": "LineBreaking Following Characters",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_0",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1_6",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1_2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_7",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1_4",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ElectricSpark01_1_0",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Circle",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "InputFieldBackground",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "UIMask",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "star_ball_warning",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "R_ribbon",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "tutorial_artwork_play_space_trip",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "coin_shop_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "bonusprize_headline2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "inside_frame_2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "AskCard_SetTitleFrame_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "GearShadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "hole_cap-2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "FirstCoverShadow02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Star",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "main_screen_crate_shadow-1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "05Cover02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "line",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "freeze_effect_overlay",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "pipe",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "booster_icon_undo",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "button_base_inner_grey_dlc",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "TeamChestGoldBoxClose",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Level_badge",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Frame-9009",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Additive_Soft1_2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Ufo05",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "001ChestIconBase",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "FirstCoverArm03",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "gear04",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "booster_icon_lightning",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Avatar_4_Big",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "DuckchestButton",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "B_lable_2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "lock_icon_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Background",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "lock-1C",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "CabinetSilver01",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "purple_time_frame",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Ticket009",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "missioncenter_title_ja",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Ball002",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BallsBoilerFront",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "pie_sticker",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Car_shadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "tutorial_artwork_daily_bonus_match",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "no_internet_button",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Character_arm-3",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "background_inner_frame_darkblue_outlined",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "FirstCover01Shadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "02BaseShadowDown",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Door01",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "line",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Wild_Type_shader",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "DuckChestGreenPack",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "sball_popup-BobShadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "SandClockShadow02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "star_ball_warning",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "LoadingBackground",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Avatar_frame-9_big",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "coin-5",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Card03",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "L_ribbon",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BoxShadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "10_screw",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Bob-4_mouth1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Alpha_DotSmall",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "mud_04_blue",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "logo-anim-T",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "dialog_popup_frame",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "title_tr",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "card_shadow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "board_lights-Maskbottom",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "sball_popup-DeactiveRock05",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Popup_Frame_3",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "bg",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "CabinetSilver04",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Gold_Popup_Frame",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "MineDashInfoDialogBottom",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "win_star_board",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Hair",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BumperFill10",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "mud_01_brown",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "eyewhite-B",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Money01",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Tax01",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Machine-3-Consol02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "infinite_icon",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "IronLineYellow",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "air_cleaner",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "mud_02_blue",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "event_ball_icon",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Driver_eyeblack-2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "team_chat_heart_gray",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "team_chat_speech_bubble_player",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "FirstChestDuckLock",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Bob-1_mouth",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "main_scene_bottom_panel_icon_on_home",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BlueArm",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "04BoxGold",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Green_Bubble_down",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "score_view_background",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Leaderboard_button-on",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "crown_rush_artwork",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "state-2_car_big",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "GreenArm05",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "11_front_door_2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Starrace_car-spoiler-0",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Car_ladle",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "03BoxCover03",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Alpha_Smoke2",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "ınfo_frame",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "DuckRight_Pipe-Light",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "LeftBob01Pupil",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "main_screen_crate",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Machine-01piece01-02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Avatar_2_Big",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "offer_frame_default",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Golds",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "vacuum_stroke",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Bob-4_body",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "team_badge_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "bottomrock_1",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "03BoxCover01",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "wingold-26",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "mini-bumper",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "FactoryPassJoinArtwork",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Base04CoverShadow03",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "RoadMask",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Road02",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "tab_frame_off",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Avatar_frame-10_shine",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Popup_Frame_Inside_3",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BumperMask",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "tutorial_artwork_pass_progress",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "02CoverArmShadow03",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "Avatar_12_Big",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "BaseReflection",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "progressbar_background",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "missioncenter_title_it",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "base_with_progress_mask_superball",
+        "container": "None"
+      },
+      {
+        "type": "Sprite",
+        "name": "LFinger03",
+        "container": "None"
+      }
+    ]
+  },
+  "resources": {
+    "path": "/Users/fulei/Downloads/match-factory-1-64-246/UnityDataAssetPack/assets/bin/Data/resources.resource",
+    "sizeBytes": 6404672,
+    "objectsScanned": 0,
+    "typeCount": 0,
+    "topTypes": [],
+    "samples": []
+  }
+}

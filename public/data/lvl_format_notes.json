@@ -1,0 +1,215 @@
+{
+  "specialLvlFiles": [
+    {
+      "fileName": "ud.lvl",
+      "bytes": 8192,
+      "sha256": "954888b9b5b26e8fcbac6880ff1544ee588477fd413a52967793edd55fd1e0f6",
+      "headHex": "53514c69746520666f726d6174203300100001010040202000000002000000020000000200000001000000020000000400000000000000000000000100000000",
+      "looksLikeSqlite3": true
+    },
+    {
+      "fileName": "gd.lvl",
+      "bytes": 8192,
+      "sha256": "954888b9b5b26e8fcbac6880ff1544ee588477fd413a52967793edd55fd1e0f6",
+      "headHex": "53514c69746520666f726d6174203300100001010040202000000002000000020000000200000001000000020000000400000000000000000000000100000000",
+      "looksLikeSqlite3": true
+    }
+  ],
+  "fingerprints": {
+    "sampleCount": 12,
+    "samples": [
+      {
+        "fileName": "Level0001_00.lvl",
+        "bytes": 7,
+        "headHex": "08011203030303",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0001_01.lvl",
+        "bytes": 36,
+        "headHex": "08011207315f4d5f315f3118ac022805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0002_00.lvl",
+        "bytes": 9,
+        "headHex": "08021201121a020909",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0002_01.lvl",
+        "bytes": 36,
+        "headHex": "08021207325f4d5f315f3118ac022805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0003_00.lvl",
+        "bytes": 10,
+        "headHex": "080312030f0c091a0109",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0003_01.lvl",
+        "bytes": 44,
+        "headHex": "08031207335f4d5f315f3118f0012805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0004_00.lvl",
+        "bytes": 13,
+        "headHex": "0804120209091a050c0c0f0c09",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0004_01.lvl",
+        "bytes": 58,
+        "headHex": "08041207345f4d5f315f3118f0012805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0005_00.lvl",
+        "bytes": 12,
+        "headHex": "0805120306090c1a03090912",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0005_01.lvl",
+        "bytes": 58,
+        "headHex": "08051207355f4d5f315f3118f0012805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0006_00.lvl",
+        "bytes": 11,
+        "headHex": "08061204120f0c091a010f",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [],
+        "maybeProtobufWire": true
+      },
+      {
+        "fileName": "Level0006_01.lvl",
+        "bytes": 51,
+        "headHex": "08061207365f4d5f315f3118d2012805",
+        "maybeZlibWrapped": false,
+        "decompressedSampleLen": null,
+        "asciiSnippets": [
+          "M_1_1"
+        ],
+        "maybeProtobufWire": true
+      }
+    ]
+  },
+  "protocDecodeRaw": {
+    "protoc": "/opt/anaconda3/bin/protoc",
+    "sampleCount": 11,
+    "samples": [
+      {
+        "fileName": "Level0001_00.lvl",
+        "relativePath": "Levels/Level0001_00.lvl",
+        "bytes": 7,
+        "decodeRawText": "1: 1\n2: \"\\003\\003\\003\"\n"
+      },
+      {
+        "fileName": "Level0001_01.lvl",
+        "relativePath": "Levels/Level0001_01.lvl",
+        "bytes": 36,
+        "decodeRawText": "1: 1\n2: \"1_M_1_1\"\n3: 300\n5: 5\n6 {\n  1: 852\n  2: 3\n}\n6 {\n  1: 61\n  2: 3\n}\n6 {\n  1: 853\n  2: 3\n}\n"
+      },
+      {
+        "fileName": "Level0002_00.lvl",
+        "relativePath": "Levels/Level0002_00.lvl",
+        "bytes": 9,
+        "decodeRawText": "1: 2\n2: \"\\022\"\n3: \"\\t\\t\"\n"
+      },
+      {
+        "fileName": "Level0002_01.lvl",
+        "relativePath": "Levels/Level0002_01.lvl",
+        "bytes": 36,
+        "decodeRawText": "1: 2\n2: \"2_M_1_1\"\n3: 300\n5: 5\n6 {\n  1: 92\n  2: 18\n}\n7 {\n  1: 519\n  2: 9\n}\n7 {\n  1: 804\n  2: 9\n}\n"
+      },
+      {
+        "fileName": "Level0010_00.lvl",
+        "relativePath": "Levels/Level0010_00.lvl",
+        "bytes": 12,
+        "decodeRawText": "1: 10\n2: \"\\014\\014\\014\"\n3: \"\\030\\030\\030\"\n"
+      },
+      {
+        "fileName": "Level0010_01.lvl",
+        "relativePath": "Levels/Level0010_01.lvl",
+        "bytes": 59,
+        "decodeRawText": "1: 10\n2: \"10_M_1_1\"\n3: 210\n5: 5\n6 {\n  1: 534\n  2: 12\n}\n6 {\n  1: 535\n  2: 12\n}\n6 {\n  1: 536\n  2: 12\n}\n7 {\n  1: 544\n  2: 24\n}\n7 {\n  1: 542\n  2: 24\n}\n7 {\n  1: 541\n  2: 24\n}\n"
+      },
+      {
+        "fileName": "Level0500_00.lvl",
+        "relativePath": "Levels/Level0500_00.lvl",
+        "bytes": 15,
+        "decodeRawText": "1: 500\n2: \"\\017\\017\\017\\017\\017\\017\"\n3: \"\\017\\017\"\n"
+      },
+      {
+        "fileName": "Level1000_00.lvl",
+        "relativePath": "Levels/Level1000_00.lvl",
+        "bytes": 15,
+        "decodeRawText": "1: 1000\n2: \"\\025\\025\\025\\025\\025\\025\"\n3: \"\\025\\025\"\n"
+      },
+      {
+        "fileName": "Level7398_00.lvl",
+        "relativePath": "Levels/Level7398_00.lvl",
+        "bytes": 23,
+        "decodeRawText": "1: 7398\n2: \"\\006\\t\\006\"\n3: \"\\017\\017\\014\\014\\014\\014\\014\\014\\017\\017\\014\\014\\014\"\n"
+      },
+      {
+        "fileName": "Level0001_00.lvl",
+        "relativePath": "DLCFallbackLevels/Level0001_00.lvl",
+        "bytes": 15,
+        "decodeRawText": "1: 1\n2: \"\\t\\t\\006\\t\"\n3: \"\\'$$!\\'\"\n"
+      },
+      {
+        "fileName": "Level0001_01.lvl",
+        "relativePath": "DLCFallbackLevels/Level0001_01.lvl",
+        "bytes": 486,
+        "decodeRawText": "1: 1\n2 {\n  6: 0x315f315f434c445f\n}\n3: 105\n4: 3\n5: 5\n6 {\n  1: 791\n  2: 9\n}\n6 {\n  1: 89\n  2: 9\n}\n6 {\n  1: 566\n  2: 6\n}\n6 {\n  1: 91\n  2: 9\n}\n7 {\n  1: 263\n  2: 39\n}\n7 {\n  1: 296\n  2: 36\n}\n7 {\n  1: 457\n  2: 36\n}\n7 {\n  1: 193\n  2: 33\n}\n7 {\n  1: 415\n  2: 39\n}\n8 {\n  1: 1\n  3: \"\\244\\027\\235\\031\\252\\033\\315\\035\\211 \\337\\\"\\321%\\342(\\225,\\354/\\3523\\2228\\351<\\361A\\260G\\251M\\341S\\336Z\\245b\\275j\\254s\\372|\\256\\207\\001\\321\\222\\001\\354\\236\\001\\212\\254\\001\\264\\272\\001\\370\\311\\001\\341\\332\\001\\375\\354\\001\\333\\200\\002\\214\\226\\002\\241\\255\\002\\254\\306\\002\\303\\341\\002\\374\\376\\002\\357\\236\\003\\266\\301\\003\\355\\346\\003\\263\\217\\004\\252\\273\\004\\365\\352\\004\\273\\236\\005\\247\\326\\005\\345\\222\\006\\251\\324\\006\\250\\233\\007\\233\\350\\007\\302\\273\\010\\341\\225\\t\\302\\367\\t\\266\\341\\n\\222\\324\\013\\265\\320\\014\\206\\327\\r\\361\\350\\016\\357\\206\\020\\202\\262\\021\\265\\353\\022\\240\\264\\024\\351\\215\\026\\301\\371\\027\\352\\370\\031\\264\\215\\034\\203\\271\\036\\314\\375 \\232\\335#\\214\\332&\\332\\366)\\327\\265-\\361\\2311\\265\\2465\\322\\3369\\227\\306>\\377\\340C\\254\\263I\\355\\301O\\305\\221V\\351\\247]\\313\\212e\\232\\300m\\311\\317v\\226\\300\\200\\001\\214\\232\\213\\001\\216\\346\\226\\001\\335\\255\\243\\001\\236\\373\\260\\001\\345\\331\\277\\001\\274\\325\\317\\001\\256\\373\\340\\001\\322\\331\\363\\001\\326\\377\\207\\002\\212\\376\\235\\002\\362\\346\\265\\002\\321\\315\\317\\002\\272\\307\\353\\002\\240\\353\\211\\003\\356\\321\\252\\003\\223\\226\\316\\003\\241\\325\\364\\003\"\n  4: \"\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\\001\"\n}\n"
+      }
+    ]
+  }
+}

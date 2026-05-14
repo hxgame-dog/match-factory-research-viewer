@@ -1,0 +1,2 @@
+# 可选：用于 `scripts/pipeline.py` 枚举 Addressables bundle 内对象
+UnityPy>=2.0

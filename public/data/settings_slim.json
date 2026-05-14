@@ -1,0 +1,7 @@
+{
+  "m_buildTarget": "Android",
+  "remoteCatalogUrls": [
+    "https://match-prod-client-dlc.matchfactory.com/Android/v6/catalog_main.hash"
+  ],
+  "m_AddressablesVersion": "1.27.0"
+}

@@ -1,0 +1,1483 @@
+{
+  "version": 4,
+  "generatedBy": "scripts/build_topic_analysis.py",
+  "sections": {
+    "levels": {
+      "title": "关卡文件（.lvl）",
+      "reverseNote": "二进制为 Google Protobuf；LevelBaseData（多为 *_00）与 LevelData（多为 *_01+）字段见 lvl_protobuf_schema.json。",
+      "totalLevels": 42154,
+      "byFolder": {
+        "DLCFallbackLevels": 5000,
+        "Levels": 37154
+      },
+      "variantDistribution": {
+        "0": 8450,
+        "1": 8450,
+        "2": 8424,
+        "3": 8417,
+        "4": 8413
+      },
+      "bytesHistogram": [
+        {
+          "range": "7-56",
+          "count": 8456
+        },
+        {
+          "range": "57-106",
+          "count": 34
+        },
+        {
+          "range": "107-156",
+          "count": 2
+        },
+        {
+          "range": "407-456",
+          "count": 50
+        },
+        {
+          "range": "457-506",
+          "count": 4951
+        },
+        {
+          "range": "507-556",
+          "count": 20663
+        },
+        {
+          "range": "557-606",
+          "count": 7802
+        },
+        {
+          "range": "607-656",
+          "count": 196
+        }
+      ],
+      "bytesMin": 7,
+      "bytesMax": 615,
+      "levelIdVariantHeatmap": {
+        "rowLabels": [
+          "1–373",
+          "374–746",
+          "747–1119",
+          "1120–1492",
+          "1493–1865",
+          "1866–2238",
+          "2239–2611",
+          "2612–2984",
+          "2985–3357",
+          "3358–3730",
+          "3731–4103",
+          "4104–4476",
+          "4477–4849",
+          "4850–5222",
+          "5223–5595",
+          "5596–5968",
+          "5969–6341",
+          "6342–6714",
+          "6715–7087",
+          "7088–7450"
+        ],
+        "colLabels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "matrix": [
+          [
+            746,
+            746,
+            720,
+            713,
+            713
+          ],
+          [
+            746,
+            746,
+            746,
+            746,
+            743
+          ],
+          [
+            627,
+            627,
+            627,
+            627,
+            627
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            372
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            373,
+            373,
+            373,
+            373,
+            373
+          ],
+          [
+            363,
+            363,
+            363,
+            363,
+            363
+          ]
+        ],
+        "maxCell": 746,
+        "note": "按 levels_index 行计数；同一 levelId+variant 可能在 Levels 与 DLCFallback 各占一行。"
+      },
+      "protobufSchemaRef": "/research",
+      "decodeRawRef": "/lvl"
+    },
+    "levelNumerics": {
+      "title": "关卡数值（模板表 CSV）",
+      "reverseNote": "源文件无表头；ingest 后列为 col_0..。col_0 为模板 ID；col_1 在样本中多为时长类整数；其余列为棋盘/目标尺寸与布尔标记，需对照 LevelDataParserUtil / 模板工具链。",
+      "sources": [
+        "UnityDataAssetPack/assets/Editor/level_templates_normal.csv",
+        "UnityDataAssetPack/assets/Editor/level_templates_ease.csv"
+      ],
+      "modes": {
+        "normal": {
+          "rowCount": 2000,
+          "columnKeysSample": [
+            "col_0",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9",
+            "col_10",
+            "col_11",
+            "col_12",
+            "col_13",
+            "col_14",
+            "col_15",
+            "col_16",
+            "col_17",
+            "col_18",
+            "col_19",
+            "col_20",
+            "col_21",
+            "col_22",
+            "col_23"
+          ],
+          "numericColumnStats": {
+            "col_0": {
+              "count": 2000,
+              "min": 1,
+              "max": 2000,
+              "median": 1001
+            },
+            "col_1": {
+              "count": 2000,
+              "min": 90,
+              "max": 300,
+              "median": 150
+            },
+            "col_2": {
+              "count": 2000,
+              "min": 0,
+              "max": 5,
+              "median": 0
+            },
+            "col_4": {
+              "count": 2000,
+              "min": 3,
+              "max": 30,
+              "median": 9
+            },
+            "col_5": {
+              "count": 1952,
+              "min": 3,
+              "max": 30,
+              "median": 9
+            },
+            "col_6": {
+              "count": 1495,
+              "min": 3,
+              "max": 30,
+              "median": 9
+            },
+            "col_7": {
+              "count": 784,
+              "min": 3,
+              "max": 24,
+              "median": 9
+            },
+            "col_8": {
+              "count": 397,
+              "min": 3,
+              "max": 21,
+              "median": 6
+            },
+            "col_9": {
+              "count": 201,
+              "min": 3,
+              "max": 21,
+              "median": 6
+            },
+            "col_10": {
+              "count": 1999,
+              "min": 3,
+              "max": 174,
+              "median": 21
+            },
+            "col_11": {
+              "count": 1972,
+              "min": 3,
+              "max": 105,
+              "median": 21
+            },
+            "col_12": {
+              "count": 1912,
+              "min": 3,
+              "max": 123,
+              "median": 18
+            },
+            "col_13": {
+              "count": 1784,
+              "min": 0,
+              "max": 60,
+              "median": 18
+            },
+            "col_14": {
+              "count": 1653,
+              "min": 0,
+              "max": 60,
+              "median": 18
+            },
+            "col_15": {
+              "count": 1479,
+              "min": 3,
+              "max": 69,
+              "median": 15
+            },
+            "col_16": {
+              "count": 1288,
+              "min": 0,
+              "max": 60,
+              "median": 15
+            },
+            "col_17": {
+              "count": 1063,
+              "min": 3,
+              "max": 54,
+              "median": 15
+            },
+            "col_18": {
+              "count": 828,
+              "min": 0,
+              "max": 39,
+              "median": 15
+            },
+            "col_19": {
+              "count": 631,
+              "min": 3,
+              "max": 60,
+              "median": 15
+            },
+            "col_20": {
+              "count": 429,
+              "min": 3,
+              "max": 30,
+              "median": 12
+            },
+            "col_21": {
+              "count": 332,
+              "min": 3,
+              "max": 72,
+              "median": 12
+            },
+            "col_22": {
+              "count": 231,
+              "min": 3,
+              "max": 30,
+              "median": 12
+            },
+            "col_23": {
+              "count": 172,
+              "min": 0,
+              "max": 42,
+              "median": 12
+            }
+          }
+        },
+        "ease": {
+          "rowCount": 2000,
+          "columnKeysSample": [
+            "col_0",
+            "col_1",
+            "col_2",
+            "col_3",
+            "col_4",
+            "col_5",
+            "col_6",
+            "col_7",
+            "col_8",
+            "col_9",
+            "col_10",
+            "col_11",
+            "col_12",
+            "col_13",
+            "col_14",
+            "col_15",
+            "col_16",
+            "col_17",
+            "col_18",
+            "col_19",
+            "col_20",
+            "col_21",
+            "col_22",
+            "col_23"
+          ],
+          "numericColumnStats": {
+            "col_0": {
+              "count": 2000,
+              "min": 1,
+              "max": 2000,
+              "median": 1001
+            },
+            "col_1": {
+              "count": 2000,
+              "min": 90,
+              "max": 300,
+              "median": 150
+            },
+            "col_2": {
+              "count": 2000,
+              "min": 0,
+              "max": 5,
+              "median": 0
+            },
+            "col_4": {
+              "count": 2000,
+              "min": 0,
+              "max": 30,
+              "median": 9
+            },
+            "col_5": {
+              "count": 1952,
+              "min": 0,
+              "max": 30,
+              "median": 9
+            },
+            "col_6": {
+              "count": 1495,
+              "min": 0,
+              "max": 30,
+              "median": 9
+            },
+            "col_7": {
+              "count": 784,
+              "min": 0,
+              "max": 24,
+              "median": 9
+            },
+            "col_8": {
+              "count": 397,
+              "min": 0,
+              "max": 21,
+              "median": 6
+            },
+            "col_9": {
+              "count": 201,
+              "min": 0,
+              "max": 21,
+              "median": 6
+            },
+            "col_10": {
+              "count": 1999,
+              "min": 0,
+              "max": 156,
+              "median": 18
+            },
+            "col_11": {
+              "count": 1972,
+              "min": 0,
+              "max": 99,
+              "median": 18
+            },
+            "col_12": {
+              "count": 1910,
+              "min": 3,
+              "max": 123,
+              "median": 18
+            },
+            "col_13": {
+              "count": 1784,
+              "min": 0,
+              "max": 60,
+              "median": 15
+            },
+            "col_14": {
+              "count": 1653,
+              "min": 0,
+              "max": 60,
+              "median": 15
+            },
+            "col_15": {
+              "count": 1478,
+              "min": 3,
+              "max": 45,
+              "median": 15
+            },
+            "col_16": {
+              "count": 1288,
+              "min": 0,
+              "max": 39,
+              "median": 15
+            },
+            "col_17": {
+              "count": 1063,
+              "min": 3,
+              "max": 36,
+              "median": 12
+            },
+            "col_18": {
+              "count": 826,
+              "min": 0,
+              "max": 39,
+              "median": 12
+            },
+            "col_19": {
+              "count": 630,
+              "min": 0,
+              "max": 45,
+              "median": 12
+            },
+            "col_20": {
+              "count": 427,
+              "min": 0,
+              "max": 30,
+              "median": 9
+            },
+            "col_21": {
+              "count": 331,
+              "min": 0,
+              "max": 36,
+              "median": 9
+            },
+            "col_22": {
+              "count": 230,
+              "min": 0,
+              "max": 24,
+              "median": 9
+            },
+            "col_23": {
+              "count": 172,
+              "min": 0,
+              "max": 36,
+              "median": 9
+            }
+          }
+        }
+      }
+    },
+    "items": {
+      "title": "物品（items.csv）",
+      "reverseNote": "策划向维度：Name、Category1/2、Color、Shape、Size 等；与关卡内 ItemType 枚举的映射在 Il2Cpp / 运行时表中。",
+      "total": 910,
+      "byCategory1": {
+        "food": 145,
+        "sport": 129,
+        "music": 106,
+        "school": 103,
+        "vehicles": 93,
+        "kitchen": 87,
+        "cubic": 59,
+        "toy": 55,
+        "drink": 49,
+        "text": 36,
+        "fruit": 25,
+        "game": 23
+      },
+      "byCategory2": {
+        "school": 174,
+        "electronic": 160,
+        "game": 141,
+        "junkfood": 119,
+        "bakery": 104,
+        "toy": 82,
+        "kitchen": 38,
+        "(空)": 23,
+        "text": 21,
+        "fruit": 15,
+        "drink": 10,
+        "vehicles": 9,
+        "sport": 8,
+        "cubic": 5,
+        "music": 1
+      },
+      "byShape": {
+        "flat": 187,
+        "sharp": 169,
+        "curved": 144,
+        "circle": 104,
+        "sphere": 102,
+        "cylinder": 85,
+        "bar": 65,
+        "mix": 54
+      }
+    },
+    "monetization": {
+      "title": "计费点（客户端字符串证据）",
+      "reverseNote": "来自 DEX + libil2cpp strings 过滤，非商店定价表；完整 SKU 与 offer 多在服务端或加密配置。",
+      "lineSources": [
+        "dex_strings_sdk.json",
+        "il2cpp_strings_sdk.json"
+      ],
+      "buckets": {
+        "GooglePlayBilling": [
+          "[classes.dex] $queryPurchaseHistoryRunnable",
+          "[classes.dex] ', subscriptionOfferDetails=",
+          "[classes.dex] If Appsflyer's Purchase Connector is in use then you also must add the following to your rules: <exclude domain=\"sharedpref\" path=\"appsflyer-purchase-data\"/> AND <exclude domain=\"database\" path=\"afpurchases.db\"/>",
+          "[classes.dex] +TPurchaseType;>;)",
+          "[classes.dex] , linkedPurchaseToken=",
+          "[classes.dex] , productPurchase=",
+          "[classes.dex] , purchaseState=",
+          "[classes.dex] , purchaseTimeMillis=",
+          "[classes.dex] , purchaseToken=",
+          "[classes.dex] , purchaseType=",
+          "[classes.dex] , subscriptionPurchase=",
+          "[classes.dex] , subscriptionState=",
+          "[classes.dex] , testPurchase=",
+          "[classes.dex] <PurchaseType:",
+          "[classes.dex] ACKNOWLEDGE_PURCHASE",
+          "[classes.dex] +ACKNOWLEDGE_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] ACTION_FLAG_AS_INAPPROPRIATE",
+          "[classes.dex] AFInAppEventParameterName",
+          "[classes.dex] AFInAppEventType",
+          "[classes.dex] AFPurchaseConnectorA1w",
+          "[classes.dex] AFPurchaseConnectorA1x",
+          "[classes.dex] AFPurchaseConnectorA1y",
+          "[classes.dex] AFPurchaseDetails",
+          "[classes.dex] AFPurchaseDetails(purchaseType=",
+          "[classes.dex] BILLING_CLIENT_PURCHASE_NAME",
+          "[classes.dex] BillingClient",
+          "[classes.dex] !BillingClientStateListenerWrapper",
+          "[classes.dex] BillingClientTesting",
+          "[classes.dex] 5Bundle returned from %s contains null purchases list.",
+          "[classes.dex] CLASSNAME_PURCHASE",
+          "[classes.dex] CLASSNAME_PURCHASES_RESULT",
+          "[classes.dex] !CLASSNAME_PURCHASE_HISTORY_RECORD",
+          "[classes.dex] ,CLASSNAME_PURCHASE_HISTORY_RESPONSE_LISTENER",
+          "[classes.dex] #CLASSNAME_PURCHASE_UPDATED_LISTENER",
+          "[classes.dex] CLIENT_MSG_ADD_SUBSCRIPTION",
+          "[classes.dex] CLIENT_MSG_REMOVE_SUBSCRIPTION",
+          "[classes.dex] CONSUME_PURCHASE",
+          "[classes.dex] 'CONSUME_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] /CREATE TABLE purchases (token TEXT PRIMARY KEY)",
+          "[classes.dex] -Client does not support get purchase history.",
+          "[classes.dex] -Client does not support multi-item purchases.",
+          "[classes.dex] -Client does not support subscriptions update.",
+          "[classes.dex] &Client does not support subscriptions.",
+          "[classes.dex] ConsumePurchase",
+          "[classes.dex] Consuming purchase with token:",
+          "[classes.dex] +Couldn't find single purchase data as well.",
+          "[classes.dex] 4Current client doesn't support multi-item purchases.",
+          "[classes.dex] =Current client doesn't support purchases with ProductDetails.",
+          "[classes.dex] -Current client doesn't support subscriptions.",
+          "[classes.dex] EMPTY_PURCHASE_TOKEN",
+          "[classes.dex] ERROR_DECODING_PURCHASE_DATA",
+          "[classes.dex] EVENT_NAME_PURCHASED",
+          "[classes.dex] 4Error consuming purchase with token. Response code:",
+          "[classes.dex] Error consuming purchase!",
+          "[classes.dex] \"Error trying to decode SkuDetails.",
+          "[classes.dex] Found purchase list of",
+          "[classes.dex] GET_PURCHASES",
+          "[classes.dex] GET_PURCHASE_HISTORY",
+          "[classes.dex] +GET_PURCHASE_HISTORY_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] #GET_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] GOOGLE_BILLINGCLIENT_VERSION",
+          "[classes.dex] GetPurchases",
+          "[classes.dex] /Got JSONException while parsing purchase data:",
+          "[classes.dex] /Got an exception trying to decode the purchase!",
+          "[classes.dex] 6Got exception trying to get purchases try to reconnect",
+          "[classes.dex] 4Got exception while trying to start a purchase flow.",
+          "[classes.dex] IAP_PURCHASE_TIME",
+          "[classes.dex] IAP_PURCHASE_TOKEN",
+          "[classes.dex] IAP_SUBSCRIPTION_AUTORENEWING",
+          "[classes.dex] IAP_SUBSCRIPTION_PERIOD",
+          "[classes.dex] INAPP",
+          "[classes.dex] INAPP_CONTINUATION_TOKEN",
+          "[classes.dex] INAPP_DATA_SIGNATURE",
+          "[classes.dex] INAPP_DATA_SIGNATURE_LIST",
+          "[classes.dex] INAPP_PURCHASE_DATA",
+          "[classes.dex] INAPP_PURCHASE_DATA_LIST",
+          "[classes.dex] INAPP_PURCHASE_ITEM_LIST",
+          "[classes.dex] -INCLUDE_SUSPENDED_SUBSCRIPTIONS_NOT_SUPPORTED",
+          "[classes.dex] !INVALID_FIRST_PARTY_PURCHASE_DATA",
+          "[classes.dex] INVALID_PURCHASES_BUNDLE",
+          "[classes.dex] IN_APP_MESSAGE_PURCHASE_TOKEN",
+          "[classes.dex] IS_FIRST_PARTY_PURCHASE",
+          "[classes.dex] @In-app billing API does not support subscription on this device.",
+          "[classes.dex] InAppAdLibrary.java",
+          "[classes.dex] (InAppPurchaseActivityLifecycleTracker.kt",
+          "[classes.dex] InAppPurchaseAutoLogger.kt",
+          "[classes.dex] $InAppPurchaseBillingClientWrapper.kt",
+          "[classes.dex] InAppPurchaseEvent",
+          "[classes.dex] InAppPurchaseEventDataSource",
+          "[classes.dex] InAppPurchaseEventManager.kt",
+          "[classes.dex] InAppPurchaseLibrary.java",
+          "[classes.dex] InAppPurchaseLoggerManager.kt",
+          "[classes.dex] InAppPurchaseManager.kt",
+          "[classes.dex] !InAppPurchaseSkuDetailsWrapper.kt",
+          "[classes.dex] InAppPurchaseUtils.kt",
+          "[classes.dex] &InAppPurchaseValidationResult(success=",
+          "[classes.dex] %InAppPurchaseValidationResultListener",
+          "[classes.dex] mIntent(\"com.android.vending.billing.InAppBillingService.BIND\")",
+          "[classes.dex] Invalid purchase token.",
+          "[classes.dex]  IsImplicitPurchaseLoggingEnabled",
+          "[classes.dex] !Item is unavailable for purchase.",
+          "[classes.dex]  LAST_QUERY_PURCHASE_HISTORY_TIME",
+          "[classes.dex] LOCAL_PURCHASES_UPDATED_ACTION",
+          "[classes.dex] 8Landroid/media/browse/MediaBrowser$SubscriptionCallback;",
+          "[classes.dex] :Landroid/support/v4/media/MediaBrowserCompat$Subscription;",
+          "[classes.dex] LLandroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback$StubApi21;",
+          "[classes.dex] LLandroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback$StubApi26;",
+          "[classes.dex] BLandroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;",
+          "[classes.dex] GLandroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallback;",
+          "[classes.dex] LLandroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallbackProxy;",
+          "[classes.dex] LLandroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallbackProxy<",
+          "[classes.dex] GLandroid/support/v4/media/MediaBrowserCompatApi26$SubscriptionCallback;",
+          "[classes.dex] LLandroid/support/v4/media/MediaBrowserCompatApi26$SubscriptionCallbackProxy;",
+          "[classes.dex] 'Landroid/telephony/SubscriptionManager;",
+          "[classes.dex] =Landroidx/core/telephony/SubscriptionManagerCompat$Api29Impl;",
+          "[classes.dex] 3Landroidx/core/telephony/SubscriptionManagerCompat;",
+          "[classes.dex] 'Lcom/android/billingclient/BuildConfig;",
+          "[classes.dex] 5Lcom/android/billingclient/api/BillingClient$Builder;",
+          "[classes.dex] -Lcom/android/billingclient/api/BillingClient;",
+          "[classes.dex] 4Lcom/android/billingclient/api/ProxyBillingActivity;"
+        ],
+        "AppsFlyer_Revenue": [
+          "[classes.dex] ALcom/appsflyer/internal/models/SubscribeWithGoogleInfo$Companion;",
+          "[classes.dex] 7Lcom/appsflyer/internal/models/SubscribeWithGoogleInfo;"
+        ],
+        "Meta_Facebook": [],
+        "Unity_Zynga_SDK": [
+          "ncompracualesexistecuerposiendoprensallegarviajesdineromurciapodr",
+          "bliconosotroshistoriapresentemillonesmediantepreguntaanteriorrecursosproblemasantiagonuestrosopini",
+          "nimportantesimportanciaposibilidadinteresantecrecimientonecesidadessuscribirseasociaci"
+        ],
+        "其它": [
+          "[classes.dex]  which is not subscribed",
+          "[classes.dex] 0(this as java.lang.String).substring(startIndex)",
+          "[classes.dex] , subscribeWithGoogleInfo=",
+          "[classes.dex] WALTER TABLE workspec ADD COLUMN `trigger_max_content_delay` INTEGER NOT NULL DEFAULT -1",
+          "[classes.dex] APPLOVIN_MAX",
+          "[classes.dex] APP_EVENTS_IF_AUTO_LOG_SUBS",
+          "[classes.dex] CACHE_READ_QUEUE_MAX_CONCURRENT",
+          "[classes.dex] %DEFAULT_AUTO_SIZE_MAX_TEXT_SIZE_IN_SP",
+          "[classes.dex] DEFAULT_HISTORY_MAX_LENGTH",
+          "[classes.dex] DEFAULT_MAX_CONCURRENT",
+          "[classes.dex] DEFAULT_MAX_ICON_DIMENSION_DP",
+          "[classes.dex] $DEFAULT_MAX_ICON_DIMENSION_LOWRAM_DP",
+          "[classes.dex] DOWNLOAD_QUEUE_MAX_CONCURRENT",
+          "[classes.dex] EDITION_MAX_VALUE",
+          "[classes.dex] EVENT_NAME_SUBSCRIBE",
+          "[classes.dex] EVENT_PARAM_MAX_RATING_VALUE",
+          "[classes.dex] 1EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_MAX_LENGTH",
+          "[classes.dex] GOOGLE_ADMOB",
+          "[classes.dex] ICON_MAX_EDGE_LENGTH",
+          "[classes.dex] INTERSTITIAL",
+          "[classes.dex] IRONSOURCE",
+          "[classes.dex] LOAD_INTERSTITIAL_AD",
+          "[classes.dex] LOAD_REWARDED_VIDEO",
+          "[classes.dex] \"Landroid/text/style/SubscriptSpan;",
+          "[classes.dex] LoadInterstitialAd",
+          "[classes.dex] LoadRewardedVideo",
+          "[classes.dex] %LocationRequest.DEFAULT_MAX_WAIT_TIME",
+          "[classes.dex] 7LocationRequestInternal.DEFAULT_MAX_LOCATION_AGE_MILLIS",
+          "[classes.dex] MAX_ACCUMULATED_LOG_EVENTS",
+          "[classes.dex] MAX_ACTION_BUTTONS",
+          "[classes.dex] MAX_ACTIVITY_COUNT_DEFAULT",
+          "[classes.dex] MAX_ACTIVITY_COUNT_UNLIMITED",
+          "[classes.dex] MAX_ADDRESS_LINES",
+          "[classes.dex] MAX_ADDRESS_WORDS",
+          "[classes.dex] MAX_ALPHA",
+          "[classes.dex] MAX_ANR_REPORT_NUM",
+          "[classes.dex] MAX_ATTEMPTS",
+          "[classes.dex] MAX_BACKOFF_MILLIS",
+          "[classes.dex] MAX_BIND_PARAMETER_CNT",
+          "[classes.dex] MAX_BITMAP_SIZE_IN_DP",
+          "[classes.dex] MAX_BLOB_BYTE_SIZE_PER_ROW",
+          "[classes.dex] MAX_BUTTON_TRANSPARENCY",
+          "[classes.dex] MAX_BYTES_PER_CHAR",
+          "[classes.dex] MAX_CACHED_BITMAP_SIZE",
+          "[classes.dex] MAX_CACHED_BUFFER_SIZE",
+          "[classes.dex] MAX_CACHED_TRANSFORMED_EVENTS",
+          "[classes.dex] MAX_CHARSEQUENCE_LENGTH",
+          "[classes.dex] MAX_CRASH_REPORT_NUM",
+          "[classes.dex] MAX_CURRENT_LOCATION_AGE_MS",
+          "[classes.dex] MAX_CUSTOM_ITEMS",
+          "[classes.dex] MAX_DATA_BYTES",
+          "[classes.dex] MAX_DATE",
+          "[classes.dex] MAX_DB_STORAGE_SIZE_IN_BYTES",
+          "[classes.dex] MAX_DEPTH",
+          "[classes.dex] MAX_EMOJI_COUNT",
+          "[classes.dex] MAX_ERROR_REPORT_NUM",
+          "[classes.dex] MAX_EXTRACT_ATTEMPTS",
+          "[classes.dex] MAX_GREEDY_SCHEDULER_LIMIT",
+          "[classes.dex] MAX_ICON_SIZE",
+          "[classes.dex] MAX_IDENTIFIER_LENGTH",
+          "[classes.dex] MAX_IMAGE_SIZE",
+          "[classes.dex] MAX_INDICATOR_LENGTH",
+          "[classes.dex] MAX_INITIAL_SELECTION_LENGTH",
+          "[classes.dex] MAX_ITEMS_MEASURED",
+          "[classes.dex] MAX_LOCATION_NAME_DISTANCE",
+          "[classes.dex] MAX_LOG_TAG_SIZE_IN_SDK_N",
+          "[classes.dex] MAX_MEDIA_BUTTONS",
+          "[classes.dex] MAX_MEDIA_BUTTONS_IN_COMPACT",
+          "[classes.dex] MAX_NUM",
+          "[classes.dex] MAX_NUM_POINTS",
+          "[classes.dex] MAX_PADDING_SCREEN_HEIGHT",
+          "[classes.dex] MAX_PADDING_SCREEN_WIDTH",
+          "[classes.dex] MAX_POOL_SIZE",
+          "[classes.dex] MAX_PREFIXED_TAG_LENGTH",
+          "[classes.dex] MAX_PRE_JOB_SCHEDULER_API_LEVEL",
+          "[classes.dex] MAX_PRINT_SIZE",
+          "[classes.dex]  MAX_PROCESSED_TRANSFORMED_EVENTS",
+          "[classes.dex] MAX_PROGRESS_ANGLE",
+          "[classes.dex] MAX_PROGRESS_ARC",
+          "[classes.dex] MAX_RATING_VALUE"
+        ]
+      }
+    },
+    "ads": {
+      "title": "广告点（客户端字符串证据）",
+      "reverseNote": "聚合 SDK 与版位相关关键字；真实 placement 名需结合运行时配置与远程 bundle。",
+      "buckets": {
+        "AppLovin_MAX": [
+          "[classes.dex] WALTER TABLE workspec ADD COLUMN `trigger_max_content_delay` INTEGER NOT NULL DEFAULT -1",
+          "[classes.dex] APPLOVIN_MAX",
+          "[classes.dex] CACHE_READ_QUEUE_MAX_CONCURRENT",
+          "[classes.dex] %DEFAULT_AUTO_SIZE_MAX_TEXT_SIZE_IN_SP",
+          "[classes.dex] DEFAULT_HISTORY_MAX_LENGTH",
+          "[classes.dex] DEFAULT_MAX_CONCURRENT",
+          "[classes.dex] DEFAULT_MAX_ICON_DIMENSION_DP",
+          "[classes.dex] $DEFAULT_MAX_ICON_DIMENSION_LOWRAM_DP",
+          "[classes.dex] DOWNLOAD_QUEUE_MAX_CONCURRENT",
+          "[classes.dex] EDITION_MAX_VALUE",
+          "[classes.dex] EVENT_PARAM_MAX_RATING_VALUE",
+          "[classes.dex] 1EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_MAX_LENGTH",
+          "[classes.dex] ICON_MAX_EDGE_LENGTH",
+          "[classes.dex] %LocationRequest.DEFAULT_MAX_WAIT_TIME",
+          "[classes.dex] 7LocationRequestInternal.DEFAULT_MAX_LOCATION_AGE_MILLIS",
+          "[classes.dex] MAX_ACCUMULATED_LOG_EVENTS",
+          "[classes.dex] MAX_ACTION_BUTTONS",
+          "[classes.dex] MAX_ACTIVITY_COUNT_DEFAULT",
+          "[classes.dex] MAX_ACTIVITY_COUNT_UNLIMITED",
+          "[classes.dex] MAX_ADDRESS_LINES",
+          "[classes.dex] MAX_ADDRESS_WORDS",
+          "[classes.dex] MAX_ALPHA",
+          "[classes.dex] MAX_ANR_REPORT_NUM",
+          "[classes.dex] MAX_ATTEMPTS",
+          "[classes.dex] MAX_BACKOFF_MILLIS",
+          "[classes.dex] MAX_BIND_PARAMETER_CNT",
+          "[classes.dex] MAX_BITMAP_SIZE_IN_DP",
+          "[classes.dex] MAX_BLOB_BYTE_SIZE_PER_ROW",
+          "[classes.dex] MAX_BUTTON_TRANSPARENCY",
+          "[classes.dex] MAX_BYTES_PER_CHAR",
+          "[classes.dex] MAX_CACHED_BITMAP_SIZE",
+          "[classes.dex] MAX_CACHED_BUFFER_SIZE",
+          "[classes.dex] MAX_CACHED_TRANSFORMED_EVENTS",
+          "[classes.dex] MAX_CHARSEQUENCE_LENGTH",
+          "[classes.dex] MAX_CRASH_REPORT_NUM",
+          "[classes.dex] MAX_CURRENT_LOCATION_AGE_MS",
+          "[classes.dex] MAX_CUSTOM_ITEMS",
+          "[classes.dex] MAX_DATA_BYTES",
+          "[classes.dex] MAX_DATE",
+          "[classes.dex] MAX_DB_STORAGE_SIZE_IN_BYTES",
+          "[classes.dex] MAX_DEPTH",
+          "[classes.dex] MAX_EMOJI_COUNT",
+          "[classes.dex] MAX_ERROR_REPORT_NUM",
+          "[classes.dex] MAX_EXTRACT_ATTEMPTS",
+          "[classes.dex] MAX_GREEDY_SCHEDULER_LIMIT",
+          "[classes.dex] MAX_ICON_SIZE",
+          "[classes.dex] MAX_IDENTIFIER_LENGTH",
+          "[classes.dex] MAX_IMAGE_SIZE",
+          "[classes.dex] MAX_INDICATOR_LENGTH",
+          "[classes.dex] MAX_INITIAL_SELECTION_LENGTH",
+          "[classes.dex] MAX_ITEMS_MEASURED",
+          "[classes.dex] MAX_LOCATION_NAME_DISTANCE",
+          "[classes.dex] MAX_LOG_TAG_SIZE_IN_SDK_N",
+          "[classes.dex] MAX_MEDIA_BUTTONS",
+          "[classes.dex] MAX_MEDIA_BUTTONS_IN_COMPACT",
+          "[classes.dex] MAX_NUM",
+          "[classes.dex] MAX_NUM_POINTS",
+          "[classes.dex] MAX_PADDING_SCREEN_HEIGHT",
+          "[classes.dex] MAX_PADDING_SCREEN_WIDTH",
+          "[classes.dex] MAX_POOL_SIZE",
+          "[classes.dex] MAX_PREFIXED_TAG_LENGTH",
+          "[classes.dex] MAX_PRE_JOB_SCHEDULER_API_LEVEL",
+          "[classes.dex] MAX_PRINT_SIZE",
+          "[classes.dex]  MAX_PROCESSED_TRANSFORMED_EVENTS",
+          "[classes.dex] MAX_PROGRESS_ANGLE",
+          "[classes.dex] MAX_PROGRESS_ARC",
+          "[classes.dex] MAX_QUERY_PURCHASE_NUM",
+          "[classes.dex] MAX_RATING_VALUE",
+          "[classes.dex] MAX_READ_FROM_CHUNK_SIZE",
+          "[classes.dex] MAX_REQUEST_CODE_RANGE",
+          "[classes.dex] MAX_RETRIES",
+          "[classes.dex] MAX_RETRIES_PER_PHASE",
+          "[classes.dex] MAX_RETRIES_REACHED",
+          "[classes.dex] MAX_RETRY_COUNT",
+          "[classes.dex] MAX_SCHEDULER_LIMIT",
+          "[classes.dex] MAX_SCROLL_FACTOR",
+          "[classes.dex] MAX_SDK_WHERE_REQUIRED",
+          "[classes.dex] MAX_SETTLE_DURATION",
+          "[classes.dex] MAX_SIDE_CHANNEL_SDK_VERSION",
+          "[classes.dex] MAX_SUPPORTED_SDK",
+          "[classes.dex] MAX_SUPPORTED_SDK_VERSION",
+          "[classes.dex] MAX_TAG_LENGTH",
+          "[classes.dex] MAX_TEXT_LENGTH",
+          "[classes.dex] MAX_TIME_SINCE_TOKEN_ISSUED",
+          "[classes.dex] MAX_TOOLBAR_ITEMS",
+          "[classes.dex] MAX_TREE_DEPTH",
+          "[classes.dex] MAX_VARINT32_SIZE",
+          "[classes.dex] MAX_VARINT64_SIZE",
+          "[classes.dex] MAX_VARINT_SIZE",
+          "[classes.dex] MAX_WAIT_MILLIS",
+          "[classes.dex] MIN_ALPHA_SEARCH_MAX_ITERATIONS",
+          "il2cpp_gc_get_max_time_slice_ns",
+          "il2cpp_gc_set_max_time_slice_ns",
+          "_ZNKSt6__ndk114__codecvt_utf8IDiE13do_max_lengthEv",
+          "_ZNKSt6__ndk114__codecvt_utf8IDsE13do_max_lengthEv",
+          "_ZNKSt6__ndk114__codecvt_utf8IwE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IDiLb0EE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IDiLb1EE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IDsLb0EE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IDsLb1EE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IwLb0EE13do_max_lengthEv",
+          "_ZNKSt6__ndk115__codecvt_utf16IwLb1EE13do_max_lengthEv",
+          "_ZNKSt6__ndk120__codecvt_utf8_utf16IDiE13do_max_lengthEv",
+          "_ZNKSt6__ndk120__codecvt_utf8_utf16IDsE13do_max_lengthEv",
+          "_ZNKSt6__ndk120__codecvt_utf8_utf16IwE13do_max_lengthEv",
+          "_ZNKSt6__ndk17codecvtIDic9mbstate_tE13do_max_lengthEv",
+          "_ZNKSt6__ndk17codecvtIDsc9mbstate_tE13do_max_lengthEv",
+          "_ZNKSt6__ndk17codecvtIcc9mbstate_tE13do_max_lengthEv",
+          "_ZNKSt6__ndk17codecvtIwc9mbstate_tE13do_max_lengthEv",
+          "mAx+mAx_",
+          "UnityEngine.RectTransform::get_anchorMax_Injected(UnityEngine.Vector2&)",
+          "UnityEngine.RectTransform::set_anchorMax_Injected(UnityEngine.Vector2&)",
+          "Too many heap sections: Increase MAXHINCR or MAX_HEAP_SECTS"
+        ],
+        "AdMob_Google": [
+          "[classes.dex] GOOGLE_ADMOB"
+        ],
+        "UnityAds": [
+          "UnityAdsEngineGetDebugMode",
+          "UnityAdsEngineGetPlacementState",
+          "UnityAdsEngineGetVersion",
+          "UnityAdsEngineInitialize",
+          "UnityAdsEngineIsInitialized",
+          "UnityAdsEngineIsReady",
+          "UnityAdsEngineIsSupported",
+          "UnityAdsEngineSetDebugMode",
+          "UnityAdsEngineSetDidErrorCallback",
+          "UnityAdsEngineSetDidFinishCallback",
+          "UnityAdsEngineSetDidStartCallback",
+          "UnityAdsEngineSetMetaData",
+          "UnityAdsEngineSetReadyCallback",
+          "UnityAdsEngineShow"
+        ],
+        "IronSource": [
+          "[classes.dex] IRONSOURCE"
+        ],
+        "Placement_Rewarded": [
+          "[classes.dex] INTERSTITIAL",
+          "[classes.dex] LOAD_INTERSTITIAL_AD",
+          "[classes.dex] LOAD_REWARDED_VIDEO",
+          "[classes.dex] LoadInterstitialAd",
+          "[classes.dex] LoadRewardedVideo",
+          "Bad argument to GC_register_displacement",
+          "GC_is_valid_displacement test failed: %p not valid",
+          "GC_is_valid_displacement test failed"
+        ],
+        "其它": [
+          "[classes.dex]  which is not subscribed",
+          "[classes.dex] $queryPurchaseHistoryRunnable",
+          "[classes.dex] ', subscriptionOfferDetails=",
+          "[classes.dex] If Appsflyer's Purchase Connector is in use then you also must add the following to your rules: <exclude domain=\"sharedpref\" path=\"appsflyer-purchase-data\"/> AND <exclude domain=\"database\" path=\"afpurchases.db\"/>",
+          "[classes.dex] 0(this as java.lang.String).substring(startIndex)",
+          "[classes.dex] +TPurchaseType;>;)",
+          "[classes.dex] , linkedPurchaseToken=",
+          "[classes.dex] , productPurchase=",
+          "[classes.dex] , purchaseState=",
+          "[classes.dex] , purchaseTimeMillis=",
+          "[classes.dex] , purchaseToken=",
+          "[classes.dex] , purchaseType=",
+          "[classes.dex] , subscribeWithGoogleInfo=",
+          "[classes.dex] , subscriptionPurchase=",
+          "[classes.dex] , subscriptionState=",
+          "[classes.dex] , testPurchase=",
+          "[classes.dex] <PurchaseType:",
+          "[classes.dex] ACKNOWLEDGE_PURCHASE",
+          "[classes.dex] +ACKNOWLEDGE_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] ACTION_FLAG_AS_INAPPROPRIATE",
+          "[classes.dex] AFInAppEventParameterName",
+          "[classes.dex] AFInAppEventType",
+          "[classes.dex] AFPurchaseConnectorA1w",
+          "[classes.dex] AFPurchaseConnectorA1x",
+          "[classes.dex] AFPurchaseConnectorA1y",
+          "[classes.dex] AFPurchaseDetails",
+          "[classes.dex] AFPurchaseDetails(purchaseType=",
+          "[classes.dex] APP_EVENTS_IF_AUTO_LOG_SUBS",
+          "[classes.dex] BILLING_CLIENT_PURCHASE_NAME",
+          "[classes.dex] BillingClient",
+          "[classes.dex] !BillingClientStateListenerWrapper",
+          "[classes.dex] BillingClientTesting",
+          "[classes.dex] 5Bundle returned from %s contains null purchases list.",
+          "[classes.dex] CLASSNAME_PURCHASE",
+          "[classes.dex] CLASSNAME_PURCHASES_RESULT",
+          "[classes.dex] !CLASSNAME_PURCHASE_HISTORY_RECORD",
+          "[classes.dex] ,CLASSNAME_PURCHASE_HISTORY_RESPONSE_LISTENER",
+          "[classes.dex] #CLASSNAME_PURCHASE_UPDATED_LISTENER",
+          "[classes.dex] CLIENT_MSG_ADD_SUBSCRIPTION",
+          "[classes.dex] CLIENT_MSG_REMOVE_SUBSCRIPTION",
+          "[classes.dex] CONSUME_PURCHASE",
+          "[classes.dex] 'CONSUME_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] /CREATE TABLE purchases (token TEXT PRIMARY KEY)",
+          "[classes.dex] -Client does not support get purchase history.",
+          "[classes.dex] -Client does not support multi-item purchases.",
+          "[classes.dex] -Client does not support subscriptions update.",
+          "[classes.dex] &Client does not support subscriptions.",
+          "[classes.dex] ConsumePurchase",
+          "[classes.dex] Consuming purchase with token:",
+          "[classes.dex] +Couldn't find single purchase data as well.",
+          "[classes.dex] 4Current client doesn't support multi-item purchases.",
+          "[classes.dex] =Current client doesn't support purchases with ProductDetails.",
+          "[classes.dex] -Current client doesn't support subscriptions.",
+          "[classes.dex] EMPTY_PURCHASE_TOKEN",
+          "[classes.dex] ERROR_DECODING_PURCHASE_DATA",
+          "[classes.dex] EVENT_NAME_PURCHASED",
+          "[classes.dex] EVENT_NAME_SUBSCRIBE",
+          "[classes.dex] 4Error consuming purchase with token. Response code:",
+          "[classes.dex] Error consuming purchase!",
+          "[classes.dex] \"Error trying to decode SkuDetails.",
+          "[classes.dex] Found purchase list of",
+          "[classes.dex] GET_PURCHASES",
+          "[classes.dex] GET_PURCHASE_HISTORY",
+          "[classes.dex] +GET_PURCHASE_HISTORY_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] #GET_PURCHASE_SERVICE_CALL_EXCEPTION",
+          "[classes.dex] GOOGLE_BILLINGCLIENT_VERSION",
+          "[classes.dex] GetPurchases",
+          "[classes.dex] /Got JSONException while parsing purchase data:",
+          "[classes.dex] /Got an exception trying to decode the purchase!",
+          "[classes.dex] 6Got exception trying to get purchases try to reconnect",
+          "[classes.dex] 4Got exception while trying to start a purchase flow.",
+          "[classes.dex] IAP_PURCHASE_TIME",
+          "[classes.dex] IAP_PURCHASE_TOKEN",
+          "[classes.dex] IAP_SUBSCRIPTION_AUTORENEWING",
+          "[classes.dex] IAP_SUBSCRIPTION_PERIOD",
+          "[classes.dex] INAPP",
+          "[classes.dex] INAPP_CONTINUATION_TOKEN",
+          "[classes.dex] INAPP_DATA_SIGNATURE",
+          "[classes.dex] INAPP_DATA_SIGNATURE_LIST",
+          "[classes.dex] INAPP_PURCHASE_DATA"
+        ]
+      }
+    }
+  },
+  "dataDiagnostics": {
+    "title": "数据产物与缺口",
+    "subtitle": "列出 ingest 关键输出是否齐全，并标注静态分析天然无法覆盖的领域。",
+    "checks": [
+      {
+        "file": "levels_index.json",
+        "description": "关卡 .lvl 索引与体积直方图数据源",
+        "present": true,
+        "sizeBytes": 8015967
+      },
+      {
+        "file": "level_templates_normal.json",
+        "description": "普通模式关卡模板（ingest CSV）",
+        "present": true,
+        "sizeBytes": 2096360
+      },
+      {
+        "file": "level_templates_ease.json",
+        "description": "宽松模式关卡模板（ingest CSV）",
+        "present": true,
+        "sizeBytes": 2095186
+      },
+      {
+        "file": "items.json",
+        "description": "物品策划表 ingest",
+        "present": true,
+        "sizeBytes": 199679
+      },
+      {
+        "file": "catalog_extract.json",
+        "description": "Addressables catalog 本地 bundle 摘要",
+        "present": true,
+        "sizeBytes": 148767
+      },
+      {
+        "file": "dex_strings_sdk.json",
+        "description": "DEX 计费/广告相关字符串候选",
+        "present": true,
+        "sizeBytes": 24673
+      },
+      {
+        "file": "il2cpp_strings_sdk.json",
+        "description": "libil2cpp 计费/广告字符串候选",
+        "present": true,
+        "sizeBytes": 2889
+      },
+      {
+        "file": "il2cpp_hints.json",
+        "description": "Il2Cpp 类名/字符串/行样例，用于专题报告证据",
+        "present": true,
+        "sizeBytes": 115937
+      },
+      {
+        "file": "lvl_protobuf_schema.json",
+        "description": ".lvl Protobuf 字段结构推断",
+        "present": true,
+        "sizeBytes": 3137
+      }
+    ],
+    "gaps": [
+      {
+        "title": "服务端与实时配置",
+        "detail": "Offer 定价、AB 实验分组结果、动态关卡哈希与远程 JSON 不在本地包内；仅能基于客户端字符串与类名做架构级推断。"
+      },
+      {
+        "title": "用户行为与关卡通过率",
+        "detail": "留存、失败率、难度调节的实际触发条件需遥测或抓包，静态包体无法还原。"
+      },
+      {
+        "title": "模板列语义（col_*）",
+        "detail": "level_templates_*.csv 无表头，各列与 LevelDataParser / 棋盘字段的精确映射需结合 C# 反编译逐列对照。"
+      },
+      {
+        "title": "物品与关卡内枚举映射",
+        "detail": "items.csv 与运行时 ItemType、关卡目标类型的对应关系需在 Il2Cpp 枚举与配置表中交叉验证。"
+      }
+    ],
+    "recommendations": [
+      "若仅缺专题 JSON：在项目根执行 `npm run ingest:topic`（需已有 levels_index 等前置文件）。",
+      "若从零搭建：执行完整 `npm run ingest`，再打开本页的「数据缺口」核对缺失项。",
+      "对动态难度：结合研究报告第 4 节线索，在 dump.cs 中精读 LevelModifierService、ClientLevelAb* 与 LevelDifficulty*。",
+      "对商业化：用商店后台 / 抓包补全 SKU 与 offer，本工具仅提供客户端可见命名与 SDK 关键字。"
+    ]
+  },
+  "researchReport": {
+    "title": "逆向研究专题报告",
+    "subtitle": "关卡模板 · 计费与礼包 · 广告版位 · 动态难度",
+    "generatedNote": "证据来自离线包体 + il2cpp_hints（类名/字符串/行样例）及 lvl_protobuf_schema；不含服务端实时价格、完整 SKU 列表与线上 AB 结果。",
+    "limitations": "商城「每一个计费点」的 SKU 与定价由 Google Play / 第三方收银台与服务器 offer 下发，本仓库无法仅从静态文件枚举全量；下列为客户端可见的架构与命名线索。",
+    "sections": [
+      {
+        "id": "levelTemplates",
+        "heading": "1. 关卡模板设定逻辑与关卡配置组合",
+        "paragraphs": [
+          "「关卡模板」在包内对应无表头的 `level_templates_normal.csv` / `level_templates_ease.csv`，ingest 后列为 `col_0..`。结合 `LevelData` Protobuf 字段（见 `lvl_protobuf_schema.json` 与 `/lvl` 页 decode_raw）：`LevelBaseData`（多为 `*_00.lvl`）描述关卡号、Goal/Board 最大尺寸等基底；`LevelData`（多为 `*_01+`）携带 `Name`、`Duration`、`Ease`、`Difficulty`、`Goals`、`Board`、`SeedRules`。",
+          "「组合方式」可归纳为：① 静态行：模板 CSV 提供数值行（与 `col_*` 对齐，语义需对照 `LevelDataParserUtil`）；② 二进制层：同一 `levelId` 多文件 `_00`/`_01`… 变体，且 `Levels` 与 `DLCFallbackLevels` 两套目录并存（索引中可重复计数）；③ 运行时扩展：`DynamicLevel*`、`LevelBundle*`、`ItemDlcFallbackLevelDataLoader` 等类名表明存在动态关卡下载、DLC 回退与关卡包更新路径，与 Addressables/catalog 联动。",
+          "专题页「关卡数值」Tab 对 normal / ease 的 min/median/max 对照，用于观察两套模板在相同列上的分布差异（ease 常为难度或时长调节维度之一，需代码级确认）。"
+        ],
+        "schemaFieldSummary": [
+          "No (#1)",
+          "Name (#2)",
+          "Duration (#3)",
+          "Ease (#4)",
+          "Difficulty (#5)",
+          "Goals (#6)",
+          "Board (#7)",
+          "SeedRules (#8)"
+        ],
+        "evidenceClasses": [
+          "BaseLevelDataLoader",
+          "ClientLevelAbProcessor",
+          "ClientLevelAbService",
+          "ClientLevelAbTerminator",
+          "DLCFallbackLevelDecisionData",
+          "DefaultLevelDataLoader",
+          "DynamicLevelConfigData",
+          "DynamicLevelDao",
+          "DynamicLevelDataLoader",
+          "DynamicLevelDeletionProcessor",
+          "DynamicLevelDownloadService",
+          "DynamicLevelEntity",
+          "DynamicLevelFileService",
+          "DynamicLevelFileWriteProcessor",
+          "DynamicLevelLoader",
+          "DynamicLevelService",
+          "DynamicLevelUrlConfigData",
+          "DynamicLevelsCommandHandler",
+          "GetDynamicLevelsConfigCommand",
+          "GetDynamicLevelsConfigReply",
+          "GetDynamicLevelsMessage",
+          "GetDynamicLevelsResponseMessage",
+          "ItemDlcFallbackLevelDataLoader",
+          "ItemDlcFallbackLevelLoader",
+          "LevelBaseData",
+          "LevelBundle",
+          "LevelBundleDownloadProcessor",
+          "LevelData",
+          "LevelDataParserUtil",
+          "LevelDataResolverService",
+          "LevelDataService",
+          "SuperBallTutorialLevelDataLoader"
+        ],
+        "evidenceStrings": [
+          "DevLevels",
+          "DynamicLevel",
+          "DynamicLevels",
+          "ABTest_LevelTable",
+          "DLCFallbackLevels",
+          "Level difficulty:",
+          "DynamicLevelStreak",
+          "DynamicLevelsError",
+          "Datasets/LevelTable",
+          "Default Level Loader",
+          "Dynamic Level Loader",
+          "DynamicLevelFileServiceGameObject",
+          "DynamicLevelDownloadAndFileServices",
+          "DynamicLevelDownloadServiceGameObject"
+        ]
+      },
+      {
+        "id": "monetization",
+        "heading": "2. 计费点、商城与动态礼包逻辑（客户端视角）",
+        "paragraphs": [
+          "Google Play Billing / `SkuDetails` / `queryPurchases` 等 DEX 字符串（见 `/sdk` 与专题「计费点」分桶）说明内购走标准 BillingClient；`AppsFlyer` Purchase Connector 用于归因回传，不等于商品定义源。",
+          "Il2Cpp 中出现 `GetOffersInfoMessage`、`GetStarterOfferInfoResponseMessage`、`GetSpecialOfferInfoResponseMessage`、`PurchaseSpecialOfferMessage`、`SetStarterOfferStateMessage` 等类型名，表明 Offer 元数据与状态以网络消息拉取/同步，客户端只负责展示与发起购买；`Cannot find offer data for full sync request! OfferId` 等日志串说明 offer 由 OfferId 主键驱动。",
+          "商城 UI 侧可见 `ShopBundleItemView`、`ShopBundleItemViewCollection`；字符串侧出现「Beginner Bundle」「Giant Bundle」「Legendary Bundle」等命名型商品、`Datasets/FlashOffer`、`Datasets/StarterOffer`、`ABTest_Shop`、`ABTest_FlashOffer`、`ABTest_StarterOffer`、`ABTest_SpecialOffer` —— 说明礼包/闪购/首购与 AB 实验开关绑定，具体开哪些 bundle 由配置/实验决定，而非硬编码单一列表。",
+          "「动态计费点」在客户端体现为：Starter / Flash / Special 等 Offer 类型 + `AvailableOfferTypes` 等关键字 + 服务器同步；价格与折扣多在 activeOfferPackage、ShopDataService 相关路径解析（字符串中有 `Failed to parse activeOfferPackage default price` 类提示）。CODASHOP 字符串表明存在第三方收银台渠道。",
+          "礼包消耗侧可见 `ConsumeSupportGiftMessage`、`SupportGiftItemDatum` 等，与社交/支持类礼包链路相关；与 `MergeGiftbox*` UI 类并存，属不同业务线。"
+        ],
+        "evidenceClasses": [
+          "ComingSoonItemPackEntryController",
+          "ConsumeSupportGiftMessage",
+          "ConsumeSupportGiftResponseMessage",
+          "DLCItemPackDownloadData",
+          "DownloadableItemPackEntryController",
+          "FactoryWorldItemPackEntryController",
+          "GetOffersInfoMessage",
+          "GetOffersInfoResponseMessage",
+          "GetSpecialOfferInfoResponseMessage",
+          "GetStarterOfferInfoResponseMessage",
+          "GetSupportGiftResponseMessage",
+          "ItemPackAssetManagementService",
+          "ItemPackAssetSettings",
+          "ItemPackEntry",
+          "ItemPackEntryController",
+          "LevelBundle",
+          "LevelBundleDownloadProcessor",
+          "MergeGiftboxItemTreeDialog",
+          "MergeGiftboxItemTreeEntry",
+          "MergeGiftboxItemTreeEntryRewardSeparator",
+          "MergeGiftboxItemTreeRewardDisplay",
+          "PackJourneyItemCollectAnimationController",
+          "PackJourneyItemPack",
+          "PackJourneyItemUnlockedDialog",
+          "PackJourneyShowItemUnlockedFlowTask",
+          "PackLevelAbProcessor",
+          "PackLevelAbService",
+          "PackLevelAbTerminator",
+          "PurchaseSpecialOfferMessage",
+          "SetStarterOfferStateMessage",
+          "ShopBundleItemView",
+          "ShopBundleItemViewCollection",
+          "SubscriptionItemPriceChangeDetails",
+          "SubscriptionPurchaseLineItem",
+          "SupportGiftItemDatum"
+        ],
+        "evidenceStrings": [
+          "CODASHOP",
+          "FlashOffer",
+          "ABTest_Shop",
+          "IsPurchased",
+          "GetPurchases",
+          "Giant Bundle",
+          "BillingProxy-",
+          "ExcessPurchase",
+          "Beginner Bundle",
+          "BoosterPurchase",
+          "ConsumePurchase",
+          "Legendary Bundle",
+          "ABTest_FlashOffer",
+          "Dialogs/ShopDialog",
+          "ABTest_SpecialOffer",
+          "ABTest_StarterOffer",
+          "AvailableOfferTypes",
+          "Datasets/FlashOffer",
+          "Datasets/LevelTable",
+          "Landroid/os/Bundle;",
+          "()Landroid/os/Bundle;",
+          "Datasets/StarterOffer",
+          "FirstTimeOfferSeenTime",
+          "Dialogs/ShopLoadingView",
+          "Billing Platform: Editor",
+          "Billing Platform: Android",
+          "EditorPendingPurchaseList",
+          "ABTest_BeginnerBundleOnOff",
+          "AppsFlyerPurchaseConnector",
+          "Asset Bundle Info Address:",
+          "AppsFlyerBillingProductNull",
+          "LastPurchasedOfferFallbackData",
+          "ABTest_PostPurchaseModification",
+          "IsImplicitPurchaseLoggingEnabled",
+          "FlashOfferAbService is not running",
+          "Billing is ready; executing action.",
+          "Datasets/CoinFrenzyLastChanceRatios",
+          "Failed to download AssetBundle: {0}",
+          "Dialogs/Purchase/PurchaseSuccessCoin",
+          "Dialogs/Purchase/PurchaseResultDialog"
+        ]
+      },
+      {
+        "id": "ads",
+        "heading": "3. 游戏内广告点位（命名与 UI 线索）",
+        "paragraphs": [
+          "字符串字面量中出现成体系的 Banner* 前缀：`BannerCoin`、`BannerPreLevel`、`BannerCoinBooster`、`BannerCoinPreLevel`、`BannerPreLevelBooster` 等，可解读为：金币条、进关前、与道具(Booster)组合的横幅广告位命名习惯（具体瀑布与 eCPM 仍在 mediation 配置中）。",
+          "`MergeEventRewardedTreeItem`、`MergeRewardedItemClaimData` 等类名表明合成/活动树上存在激励视频领奖路径；与 `IAPButton` 同现于字符串表，说明部分入口同时承担 IAP 与广告变现。",
+          "DEX/il2cpp 通用 SDK 关键字（MAX、AdMob、UnityAds、IronSource、rewarded/interstitial）见专题「广告」分桶；精确 placement id 往往在运行时由远程配置注入，静态字符串仅为子集。"
+        ],
+        "evidenceClasses": [
+          "MergeEventRewardedTreeItem",
+          "MergeRewardedItemClaimData"
+        ],
+        "evidenceStrings": [
+          "BannerCoin",
+          "BannerPreLevel",
+          "BannerCoinBooster",
+          "BannerCoinPreLevel",
+          "BannerPreLevelBooster",
+          "BannerCoinPreLevelBooster",
+          "Dialogs/FactoryPass/InfoDialog/FactoryPassExtraRewardEntryWithBanner",
+          "Entity replacement text must nest properly within markup declarations."
+        ]
+      },
+      {
+        "id": "dynamicDifficulty",
+        "heading": "4. 动态难度与关卡调节设计",
+        "paragraphs": [
+          "`LevelData` 消息内已有 `Ease`、`Difficulty` 字段（Protobuf schema），说明单关文件可携带难度/宽松度标量或枚举。",
+          "`ClientLevelAbService` / `ClientLevelAbProcessor` / `ClientLevelAbTerminator` 与字符串 `ABTest_Level`、`ABTest_LevelTable`、`AbTestLevels`、`Datasets/LevelTable` 共同指向：关卡表或关卡参数可做 AB 实验，而非仅 UI。",
+          "`LevelDifficultyRewardService`、`LevelDifficultyCoinAbService`、`LevelDifficultyCoinRewardAbTerminator` 表明关卡难度与金币奖励存在 AB 调节链路（可能与失败率、留存挂钩）。",
+          "`DynamicLevelService`、`DynamicLevelLoader`、`GetDynamicLevelsConfigCommand` 等说明部分关卡远程下发/热更新；与 `Dynamic level {0} hash is changed` 类日志（字符串区）一致，用于检测动态关卡被覆盖。",
+          "dump.cs 行样例中出现 `LevelModifierService`、`ConsumeLevelModificationData`、`TryDecreaseItemMatches` / `TryIncreaseItemMatches` 等签名，方向为当局内修改目标数量或时长（与 `extraDurationRatio`、`decreaseItemRatio` 等构造参数呼应），属于运行时动态难度/补救一类逻辑，与静态模板 CSV 互补。",
+          "字符串 `Level difficulty:`、`DynamicLevelStreak`、`ActiveLevelStreak` 暗示存在连胜/难度 streak 与难度展示或调节；具体算法需结合 `LevelModifierService` 源码阅读。"
+        ],
+        "evidenceClasses": [
+          "ClientLevelAbProcessor",
+          "ClientLevelAbService",
+          "ClientLevelAbTerminator",
+          "DynamicLevelConfigData",
+          "DynamicLevelDao",
+          "DynamicLevelDataLoader",
+          "DynamicLevelDeletionProcessor",
+          "DynamicLevelDownloadService",
+          "DynamicLevelEntity",
+          "DynamicLevelFileService",
+          "DynamicLevelFileWriteProcessor",
+          "DynamicLevelLoader",
+          "DynamicLevelService",
+          "DynamicLevelUrlConfigData",
+          "DynamicLevelsCommandHandler",
+          "GetDynamicLevelsConfigCommand",
+          "GetDynamicLevelsConfigReply",
+          "GetDynamicLevelsMessage",
+          "GetDynamicLevelsResponseMessage",
+          "LevelAbProcessor",
+          "LevelDifficultyCoinAbProcessor",
+          "LevelDifficultyCoinAbService",
+          "LevelDifficultyCoinAbServiceDataModel",
+          "LevelDifficultyCoinRewardAbTerminator",
+          "LevelDifficultyRewardService",
+          "LevelModifierService",
+          "LevelTableAbProcessor",
+          "LevelTableAbService",
+          "LevelTableAbTerminator",
+          "PackLevelAbProcessor",
+          "PackLevelAbService",
+          "PackLevelAbTerminator"
+        ],
+        "evidenceStrings": [
+          "ABTest_Level",
+          "AbTestLevels",
+          "DynamicLevel",
+          "DynamicLevels",
+          "ABTest_LevelChest",
+          "ABTest_LevelTable",
+          "Level difficulty:",
+          "ABTest_ClientLevel",
+          "DynamicLevelStreak",
+          "DynamicLevelsError",
+          "DynamicLevelFileServiceGameObject",
+          "ABTest_LevelDifficultyCoinRewardAb",
+          "DynamicLevelDownloadAndFileServices",
+          "DynamicLevelDownloadServiceGameObject"
+        ],
+        "evidenceLineSamples": [
+          "L10582: private void SetupDynamicLevelDownloadAndFileServices() { }",
+          "L10663: private void SetupLevelModifierService() { }",
+          "L12380: public void .ctor(float minimumPurchaseAmount, float maximumPurchaseAmount, int[] levelExtraDurations, float[] levelExtraDurationsRatio, float[] decreaseItemRatio) { }",
+          "L31537: public class LevelDifficultyRewardService : IService // TypeDefIndex: 881",
+          "L32863: public void .ctor(int id, int extraTimeInSeconds, int modifierTypes, float extraDurationRatio, float decreaseItemRatio) { }",
+          "L32942: public void .ctor(int minDurationInHours, int[] levelExtraDurations, float[] levelExtraDurationsRatio, float[] decreaseItemRatio, RewardData[] rewardData, bool activateSuperBall, bool activateChiefsTool) { }",
+          "L40596: public void .ctor(DynamicLevelUrlConfigData levelUrlConfig, Action<List<DynamicLevelConfigData>> onSuccess, Action onFail) { }",
+          "L40782: private void LoadLevel(int levelIndex, bool tryUseDynamicLevels = True) { }",
+          "L40828: private sealed class LevelModifierService.<>c // TypeDefIndex: 1121",
+          "L40848: private struct LevelModifierService.<>c__DisplayClass8_0 // TypeDefIndex: 1122",
+          "L40860: public class LevelModifierService : IService // TypeDefIndex: 1123",
+          "L40898: public void ConsumeLevelModificationData(int levelIndex, int extraTime, LevelModifierReason reason, float extraDurationRatio, float decreaseItemRatio) { }",
+          "L40911: private void <ModifyLevelItemMatches>g__TryDecreaseItemMatches|8_0(ref LevelModifierService.<>c__DisplayClass8_0 ) { }",
+          "L40915: private void <ModifyLevelItemMatches>g__TryIncreaseItemMatches|8_1(ref LevelModifierService.<>c__DisplayClass8_0 ) { }",
+          "L41069: public class DynamicLevelLoader : BaseLevelLoader // TypeDefIndex: 1128",
+          "L41292: public class DynamicLevelDataLoader : BaseLevelDataLoader // TypeDefIndex: 1134",
+          "L41358: public class DynamicLevelConfigData // TypeDefIndex: 1137",
+          "L41376: private sealed class DynamicLevelDeletionProcessor.<CheckTask>d__14 : IEnumerator<object>, IEnumerator, IDisposable // TypeDefIndex: 1138",
+          "L41414: public class DynamicLevelDeletionProcessor // TypeDefIndex: 1139",
+          "L41457: private sealed class DynamicLevelDownloadService.<>c__DisplayClass8_0 // TypeDefIndex: 1140"
+        ]
+      }
+    ],
+    "references": [
+      "public/data/lvl_protobuf_schema.json",
+      "public/data/levels_index.json",
+      "public/data/level_templates_normal.json",
+      "public/data/il2cpp_hints.json",
+      "public/data/dex_strings_sdk.json"
+    ]
+  },
+  "visualizationHints": {
+    "levels": [
+      "关卡 ID 段×变体热力图（已实现）",
+      "体积散点、模板关联见二期"
+    ],
+    "levelNumerics": [
+      "列数值 min/max/median 表",
+      "normal vs ease 对照表",
+      "热力图（列×模板抽样）"
+    ],
+    "items": [
+      "Category1/2 树状或旭日",
+      "Shape 条形"
+    ],
+    "monetization": [
+      "分桶条形 + 可展开原文列表",
+      "与 Il2Cpp 类名交叉过滤"
+    ],
+    "ads": [
+      "SDK 分桶 + placement 关键字云或条形"
+    ],
+    "researchReport": [
+      "报告正文由 ingest 聚合",
+      "证据列表可对照 /il2cpp 与 /sdk"
+    ],
+    "dataDiagnostics": [
+      "按文件检查体积与缺失",
+      "待补强维度与下一步建议"
+    ]
+  }
+}

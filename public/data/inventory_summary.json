@@ -1,0 +1,140 @@
+{
+  "matchFactoryRoot": "/Users/fulei/Downloads/match-factory-1-64-246",
+  "unityDataAssetPack": {
+    "assetsPath": "/Users/fulei/Downloads/match-factory-1-64-246/UnityDataAssetPack/assets",
+    "totalFiles": 42174,
+    "totalBytes": 190890840,
+    "byExtension": [
+      {
+        "ext": "lvl",
+        "count": 42158,
+        "bytes": 18254809
+      },
+      {
+        "ext": "bundle",
+        "count": 3,
+        "bytes": 55268837
+      },
+      {
+        "ext": "csv",
+        "count": 3,
+        "bytes": 439310
+      },
+      {
+        "ext": "json",
+        "count": 3,
+        "bytes": 707627
+      },
+      {
+        "ext": "png",
+        "count": 2,
+        "bytes": 20597
+      },
+      {
+        "ext": "mp4",
+        "count": 1,
+        "bytes": 346513
+      },
+      {
+        "ext": "resource",
+        "count": 1,
+        "bytes": 6404672
+      },
+      {
+        "ext": "txt",
+        "count": 1,
+        "bytes": 19841
+      },
+      {
+        "ext": "unity3d",
+        "count": 1,
+        "bytes": 109425786
+      },
+      {
+        "ext": "xml",
+        "count": 1,
+        "bytes": 2848
+      }
+    ],
+    "lvlByTopFolder": {
+      "root": 2,
+      "Levels": 37156,
+      "DLCFallbackLevels": 5000
+    }
+  },
+  "mainApkAssets": {
+    "assetsPath": "/Users/fulei/Downloads/match-factory-1-64-246/net.peakgames.match/assets",
+    "totalFiles": 51,
+    "totalBytes": 25918328,
+    "byExtension": [
+      {
+        "ext": "js",
+        "count": 29,
+        "bytes": 2318141
+      },
+      {
+        "ext": "noext",
+        "count": 8,
+        "bytes": 4269872
+      },
+      {
+        "ext": "dat",
+        "count": 6,
+        "bytes": 14892555
+      },
+      {
+        "ext": "json",
+        "count": 3,
+        "bytes": 8482
+      },
+      {
+        "ext": "config",
+        "count": 1,
+        "bytes": 127
+      },
+      {
+        "ext": "html",
+        "count": 1,
+        "bytes": 2140
+      },
+      {
+        "ext": "prof",
+        "count": 1,
+        "bytes": 1843
+      },
+      {
+        "ext": "profm",
+        "count": 1,
+        "bytes": 209
+      },
+      {
+        "ext": "unity3d",
+        "count": 1,
+        "bytes": 4424959
+      }
+    ]
+  },
+  "globalMetadataDat": [
+    "/Users/fulei/Downloads/match-factory-1-64-246/net.peakgames.match/assets/bin/Data/Managed/Metadata/global-metadata.dat"
+  ],
+  "parseability": {
+    "L0": [
+      "Editor/*.csv",
+      "aa/settings.json",
+      "badwords.txt"
+    ],
+    "L1": [
+      "aa/catalog.json (m_InternalIds)"
+    ],
+    "L2": [
+      "*.bundle",
+      "datapack.unity3d",
+      "resources.resource"
+    ],
+    "L3": [
+      "*.lvl",
+      "ud.lvl",
+      "gd.lvl"
+    ]
+  }
+}

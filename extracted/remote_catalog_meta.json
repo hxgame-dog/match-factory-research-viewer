@@ -1,0 +1,19 @@
+{
+  "basesTried": [
+    "https://match-prod-client-dlc.matchfactory.com/Android/v6/"
+  ],
+  "timeoutSec": 12.0,
+  "results": [
+    {
+      "base": "https://match-prod-client-dlc.matchfactory.com/Android/v6/",
+      "catalog_main.hash": {
+        "httpStatus": 403,
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "catalog_main.json": {
+        "httpStatus": 403,
+        "error": "HTTP Error 403: Forbidden"
+      }
+    }
+  ]
+}

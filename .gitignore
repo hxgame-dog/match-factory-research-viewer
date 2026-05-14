@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+*.log
+.env*.local
+.DS_Store
+*.pyc
+__pycache__/
+.vercel
+
+# Il2CppDumper 下载与导出（体积大）
+tools/il2cppdumper-net7/
+extracted/il2cpp_out/
+public/data/research.db
+extracted/research.db

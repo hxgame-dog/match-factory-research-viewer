@@ -62,9 +62,12 @@ export const bundlesHelp = {
 };
 
 export const sdkHelp = {
-  header: `字符串来自对 DEX 与 libil2cpp.so 做过滤后的「候选行」，用于证明客户端里出现过哪些 SDK / API 关键字。
+  header: `字符串来自对 DEX 与 libil2cpp.so 做过滤后的「候选行」，以及 il2cpp_hints 中的类名/字面量子集；用于证明客户端里出现过哪些 SDK、商城与广告关键字。
 
 这不是 Google Play 商品列表，也不是广告瀑布流配置；价格、placement 全量多在服务端或加密配置。`,
+  mall: `本 Tab 只展示<strong>商城、礼包、Offer、内购、通行证</strong>相关证据：来自 il2cpp_hints 的字符串字面量 + 类名命中，并叠加 DEX 中与商城信号相关的行；已过滤大部分纯广告版位与裸 HTTP。
+
+默认从「可见商品命名」「ABTest_Shop」「Datasets/StarterOffer」等桶下钻；完整 SKU 仍以服务端为准。`,
   dex: `classes.dex / classes2.dex 中的命中行，偏 Java/Kotlin 层集成（如 BillingClient）。
 
 左侧为自动分桶（与专题页思路一致），右侧表格去掉 \`[classes.dex]\` 前缀后展示正文，支持全文搜索，便于逐条下钻。`,

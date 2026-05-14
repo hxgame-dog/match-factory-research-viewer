@@ -67,10 +67,10 @@ export const sdkHelp = {
 这不是 Google Play 商品列表，也不是广告瀑布流配置；价格、placement 全量多在服务端或加密配置。`,
   dex: `classes.dex / classes2.dex 中的命中行，偏 Java/Kotlin 层集成（如 BillingClient）。
 
-适合做「有没有接某 SDK」的证据链起点。`,
+左侧为自动分桶（与专题页思路一致），右侧表格去掉 \`[classes.dex]\` 前缀后展示正文，支持全文搜索，便于逐条下钻。`,
   il2cpp: `native 层 Il2Cpp 编译进 so 的字符串，常与 C# 类名、资源路径、广告 mediation 相关。
 
-行数可能很多；专题分析页会对同类字符串做分桶统计。`,
+本页同样提供分桶 + 搜索 + 表格；专题分析页侧重聚合图表，此处侧重可读浏览。`,
 };
 
 export const lvlHelp = {

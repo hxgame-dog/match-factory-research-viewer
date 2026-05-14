@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRegisterExports } from "@/components/ExportToolbar";
 import { HelpBlock, ModuleWithHelp } from "@/components/ModuleWithHelp";
+import { SdkStringsExplorer } from "@/components/SdkStringsExplorer";
 import { sdkHelp } from "@/content/inlineHelp.zh";
 import { downloadCsv } from "@/lib/csvDownload";
 
@@ -52,42 +53,24 @@ export default function SdkPage() {
           <h2 className="font-serif text-lg font-semibold text-gray-900">计费与广告（客户端字符串证据）</h2>
           <p className="mt-1 text-sm text-gray-500">
             由 <code className="rounded bg-gray-100 px-1">strings</code> 从 DEX / <code className="rounded bg-gray-100 px-1">libil2cpp.so</code>{" "}
-            过滤得到，非官方文档；价格与展示逻辑仍以商店与线上下发为准。字符串列表导出见底部「本页导出」。
+            过滤得到，非官方文档；价格与展示逻辑仍以商店与线上下发为准。可按分桶浏览、全文搜索；完整列表导出见底部「本页导出」。
           </p>
         </div>
       </ModuleWithHelp>
 
       <ModuleWithHelp helpTitle="说明" help={<HelpBlock text={sdkHelp.dex} />}>
-        <section>
-          <h3 className="text-sm font-medium text-gray-900">classes.dex / classes2.dex 命中</h3>
-          <p className="text-xs text-gray-500">共 {dex.length} 条（截断）</p>
-          <ul className="mt-2 max-h-96 overflow-y-auto rounded-md border border-gray-200 bg-white p-3 font-mono text-xs text-gray-800">
-            {dex.map((l) => (
-              <li key={l} className="border-b border-gray-50 py-1">
-                {l}
-              </li>
-            ))}
-          </ul>
-        </section>
+        <SdkStringsExplorer title="classes.dex / classes2.dex 命中" lines={dex} fallbackTag="dex" />
       </ModuleWithHelp>
 
       <ModuleWithHelp helpTitle="说明" help={<HelpBlock text={sdkHelp.il2cpp} />}>
-        <section>
-          <h3 className="text-sm font-medium text-gray-900">libil2cpp.so 命中</h3>
-          {cpp && (
-            <>
-              <p className="text-xs text-gray-500 break-all">{cpp.source}</p>
-              <p className="text-xs text-gray-500">共 {cpp.lines.length} 条（截断）</p>
-              <ul className="mt-2 max-h-96 overflow-y-auto rounded-md border border-gray-200 bg-white p-3 font-mono text-xs text-gray-800">
-                {cpp.lines.map((l) => (
-                  <li key={l} className="border-b border-gray-50 py-1">
-                    {l}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </section>
+        {cpp && cpp.lines.length > 0 ? (
+          <div className="space-y-2">
+            <p className="text-xs text-gray-500 break-all">源文件：{cpp.source}</p>
+            <SdkStringsExplorer title="libil2cpp.so 命中" lines={cpp.lines} fallbackTag="libil2cpp.so" />
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500">暂无 il2cpp 候选行。</p>
+        )}
       </ModuleWithHelp>
     </div>
   );

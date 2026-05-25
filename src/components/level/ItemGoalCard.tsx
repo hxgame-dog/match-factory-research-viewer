@@ -19,12 +19,24 @@ type Props = {
   label: string;
   itemsById: Map<number, ItemRow>;
   hasSprite?: Set<string>;
+  spriteUrlByItemId?: Map<number, string>;
+  spriteUrlByName?: Map<string, string>;
 };
 
-export function ItemGoalCard({ itemId, count, label, itemsById, hasSprite }: Props) {
+export function ItemGoalCard({
+  itemId,
+  count,
+  label,
+  itemsById,
+  hasSprite,
+  spriteUrlByItemId,
+  spriteUrlByName,
+}: Props) {
   const row = itemsById.get(itemId);
   const name = row?.Name ?? `(无 itemId ${itemId})`;
-  const showImg = hasSprite?.has(name) ?? true;
+  const publicUrl =
+    spriteUrlByItemId?.get(itemId) ?? (name ? spriteUrlByName?.get(name) : undefined);
+  const showImg = publicUrl ? true : (hasSprite?.has(name) ?? true);
   const [imgErr, setImgErr] = useState(false);
 
   return (
@@ -35,7 +47,7 @@ export function ItemGoalCard({ itemId, count, label, itemsById, hasSprite }: Pro
           {showImg && !imgErr ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={itemSpriteUrl(name)}
+              src={itemSpriteUrl(name, publicUrl)}
               alt={name}
               className="max-h-[72px] max-w-[72px] object-contain"
               onError={() => setImgErr(true)}

@@ -24,7 +24,7 @@ export const itemsHelp = {
 第一列 ItemId（ID）为行号从 0 起，与 .lvl 里 field 6/7 的子字段 1 相同。`,
   controls: `筛选框会在所有列里做子串匹配（不区分大小写）。导出 CSV 只导出当前筛选结果，方便放进 Excel。
 
-勾选「贴图预览」时通过 /api/item-sprite 读取本机导出的 PNG（需 npm run dev）。`,
+勾选「贴图预览」时从 public/sprites 静态路径加载（已随仓库部署，线上 Vercel 可用）。`,
   table: `列名与 CSV 一致，并增加 ItemId。贴图列按 Name 匹配 sprites/{Name}.png。
 
 在「关卡配置说明」页可输入 ItemId 查看关卡目标与贴图对照。`,
@@ -36,7 +36,7 @@ export const levelGuideHelp = {
 ItemId 不是关卡号：Level0852 是第 852 关，而 decode 里的 852 才是道具 ID。`,
   fieldLegend: `对照说明见 docs/LEVEL_CONFIG_GUIDE.zh-CN.md。_00.lvl 管棋盘编码，_01.lvl 管时长与目标。`,
   samplePicker: `下拉为 lvl_format_notes.json 里已 decode 的样例。也可自行粘贴 decode_raw 结果做实验。`,
-  goalsPreview: `每张卡片：ItemId、策划名、分类、数量，以及 itempack 导出贴图（本地 API 提供）。`,
+  goalsPreview: `每张卡片：ItemId、策划名、分类、数量，以及 public/sprites 中的 PNG（线上可直接加载）。`,
   rawBlock: `原始 decode_raw 便于与仓库脚本 decode_lvl_goals.py 对照。`,
   idLookup: `输入任意 ItemId（逗号分隔）快速查物品与贴图，无需完整 .lvl 文件。`,
 };

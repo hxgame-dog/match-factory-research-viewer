@@ -4,13 +4,8 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
+const BUNDLES = ["itempack-01", "itempack52", "itempackcommon"];
 const DEFAULT_ROOT = "/Users/fulei/Downloads/match-factory-1-64-246";
-
-const SPRITE_DIRS = [
-  "exported/addressables_itempack/itempack-01/sprites",
-  "exported/addressables_itempack/itempack52/sprites",
-  "exported/addressables_itempack/itempackcommon/sprites",
-];
 
 export async function GET(
   _req: Request,
@@ -22,9 +17,31 @@ export async function GET(
     return NextResponse.json({ error: "非法文件名" }, { status: 400 });
   }
 
+  for (const bundle of BUNDLES) {
+    const pubPath = path.join(process.cwd(), "public", "sprites", bundle, `${name}.png`);
+    try {
+      const buf = await readFile(pubPath);
+      return new NextResponse(buf, {
+        headers: {
+          "Content-Type": "image/png",
+          "Cache-Control": "public, max-age=31536000, immutable",
+        },
+      });
+    } catch {
+      /* next */
+    }
+  }
+
   const root = process.env.MATCH_FACTORY_ROOT || DEFAULT_ROOT;
-  for (const sub of SPRITE_DIRS) {
-    const filePath = path.join(root, sub, `${name}.png`);
+  for (const bundle of BUNDLES) {
+    const filePath = path.join(
+      root,
+      "exported",
+      "addressables_itempack",
+      bundle,
+      "sprites",
+      `${name}.png`,
+    );
     try {
       const buf = await readFile(filePath);
       return new NextResponse(buf, {
@@ -34,16 +51,9 @@ export async function GET(
         },
       });
     } catch {
-      /* try next dir */
+      /* next */
     }
   }
 
-  return NextResponse.json(
-    {
-      error: "未找到贴图",
-      hint: "请确认已 export:itempack，且 MATCH_FACTORY_ROOT 指向包体目录",
-      name,
-    },
-    { status: 404 },
-  );
+  return NextResponse.json({ error: "未找到贴图", name }, { status: 404 });
 }

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ItemGoalCard, type ItemRow } from "@/components/level/ItemGoalCard";
 import { HelpBlock, ModuleWithHelp } from "@/components/ModuleWithHelp";
 import { levelGuideHelp } from "@/content/inlineHelp.zh";
+import { buildSpriteUrlByItemId, buildSpriteUrlByName } from "@/lib/itemSprite";
 import { parseDecodeRaw } from "@/lib/parseLvlGoals";
 
 type PbSample = {
@@ -19,7 +20,7 @@ type LvlDoc = {
 };
 
 type SpriteIndex = {
-  items: { itemId: number; name: string; spriteFile: string | null }[];
+  items: { itemId: number; name: string; publicUrl?: string | null; spriteFile: string | null }[];
 };
 
 export default function LevelGuidePage() {
@@ -56,13 +57,15 @@ export default function LevelGuidePage() {
     return m;
   }, [items]);
 
-  const hasSprite = useMemo(() => {
-    const s = new Set<string>();
-    spriteIndex?.items.forEach((x) => {
-      if (x.spriteFile) s.add(x.name);
-    });
-    return s;
-  }, [spriteIndex]);
+  const spriteUrlByName = useMemo(
+    () => buildSpriteUrlByName(spriteIndex?.items ?? []),
+    [spriteIndex],
+  );
+  const spriteUrlByItemId = useMemo(
+    () => buildSpriteUrlByItemId(spriteIndex?.items ?? []),
+    [spriteIndex],
+  );
+  const hasSprite = useMemo(() => new Set(spriteUrlByName.keys()), [spriteUrlByName]);
 
   const samples = useMemo(
     () => (lvlDoc?.protocDecodeRaw?.samples ?? []).filter((s) => s.decodeRawText),
@@ -96,9 +99,9 @@ export default function LevelGuidePage() {
             <strong>ItemId</strong> 与本地导出的 itempack 贴图。完整长文见仓库{" "}
             <code className="rounded bg-gray-100 px-1">docs/LEVEL_CONFIG_GUIDE.zh-CN.md</code>。
           </p>
-          <p className="mt-2 text-xs text-amber-800">
-            贴图预览依赖本机 <code className="rounded bg-amber-50 px-1">npm run dev</code> 与已导出的
-            sprites 目录；Vercel 线上部署若无包体路径则显示「无预览」。
+          <p className="mt-2 text-xs text-gray-500">
+            贴图已托管在站点 <code className="rounded bg-gray-100 px-1">public/sprites/</code>（约
+            11MB），线上与本地均可预览。
           </p>
         </div>
       </ModuleWithHelp>
@@ -194,6 +197,8 @@ export default function LevelGuidePage() {
                         label="收集目标"
                         itemsById={itemsById}
                         hasSprite={hasSprite}
+                        spriteUrlByItemId={spriteUrlByItemId}
+                        spriteUrlByName={spriteUrlByName}
                       />
                     ))}
                   </div>
@@ -213,6 +218,8 @@ export default function LevelGuidePage() {
                         label="棋盘投放"
                         itemsById={itemsById}
                         hasSprite={hasSprite}
+                        spriteUrlByItemId={spriteUrlByItemId}
+                        spriteUrlByName={spriteUrlByName}
                       />
                     ))}
                   </div>
@@ -247,6 +254,8 @@ export default function LevelGuidePage() {
                 label="ID 查询"
                 itemsById={itemsById}
                 hasSprite={hasSprite}
+                spriteUrlByItemId={spriteUrlByItemId}
+                spriteUrlByName={spriteUrlByName}
               />
             ))}
           </div>

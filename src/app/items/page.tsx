@@ -5,13 +5,13 @@ import { useRegisterExports } from "@/components/ExportToolbar";
 import { HelpBlock, ModuleWithHelp } from "@/components/ModuleWithHelp";
 import { itemsHelp } from "@/content/inlineHelp.zh";
 import { downloadCsv } from "@/lib/csvDownload";
-import { itemSpriteUrl } from "@/lib/itemSprite";
+import { buildSpriteUrlByName, itemSpriteUrl } from "@/lib/itemSprite";
 
 type Row = Record<string, string>;
 
 export default function ItemsPage() {
   const [rows, setRows] = useState<Row[]>([]);
-  const [spriteNames, setSpriteNames] = useState<Set<string>>(new Set());
+  const [spriteUrlByName, setSpriteUrlByName] = useState<Map<string, string>>(new Map());
   const [q, setQ] = useState("");
   const [err, setErr] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(true);
@@ -29,14 +29,10 @@ export default function ItemsPage() {
       .catch(() => setErr("加载 items.json 失败"));
     fetch("/data/item_sprite_index.json")
       .then((r) => r.json())
-      .then((j: { items?: { name: string; spriteFile: string | null }[] }) => {
-        const s = new Set<string>();
-        (j.items ?? []).forEach((x) => {
-          if (x.spriteFile) s.add(x.name);
-        });
-        setSpriteNames(s);
+      .then((j: { items?: { name: string; publicUrl?: string | null }[] }) => {
+        setSpriteUrlByName(buildSpriteUrlByName(j.items ?? []));
       })
-      .catch(() => setSpriteNames(new Set()));
+      .catch(() => setSpriteUrlByName(new Map()));
   }, []);
 
   const cols = useMemo(() => {
@@ -115,7 +111,7 @@ export default function ItemsPage() {
               checked={showPreview}
               onChange={(e) => setShowPreview(e.target.checked)}
             />
-            显示贴图预览（需本地 dev + 已导出 sprites）
+            显示贴图预览（public/sprites，线上可用）
           </label>
         </div>
       </ModuleWithHelp>
@@ -143,7 +139,8 @@ export default function ItemsPage() {
               <tbody>
                 {slice.map((r, i) => {
                   const name = r.Name ?? "";
-                  const canPreview = name && spriteNames.has(name);
+                  const publicUrl = name ? spriteUrlByName.get(name) : undefined;
+                  const canPreview = !!publicUrl;
                   return (
                     <tr key={i} className="border-b border-gray-100">
                       {showPreview && (
@@ -151,7 +148,7 @@ export default function ItemsPage() {
                           {canPreview ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img
-                              src={itemSpriteUrl(name)}
+                              src={itemSpriteUrl(name, publicUrl)}
                               alt={name}
                               width={40}
                               height={40}

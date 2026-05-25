@@ -10,7 +10,9 @@
     "ingest": "python3 scripts/pipeline.py",
     "ingest:topic": "python3 scripts/build_topic_analysis.py",
     "ingest:il2cpp": "bash scripts/ingest_il2cpp.sh && python3 scripts/extract_il2cpp_hints.py",
-    "ingest:il2cpp-hints": "python3 scripts/extract_il2cpp_hints.py"
+    "ingest:il2cpp-hints": "python3 scripts/extract_il2cpp_hints.py",
+    "export:itempack": "python3 scripts/export_addressables_textures.py",
+    "ingest:item-index": "python3 scripts/build_item_sprite_index.py"
   },
   "dependencies": {
     "next": "14.2.35",

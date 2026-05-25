@@ -1141,7 +1141,7 @@
         "file": "lvl_protobuf_schema.json",
         "description": ".lvl Protobuf 字段结构推断",
         "present": true,
-        "sizeBytes": 3137
+        "sizeBytes": 97
       }
     ],
     "gaps": [
@@ -1188,16 +1188,7 @@
           "ease 相对 normal **中位数下降**的列（两表整数样本均 ≥12% 行数或至少 50 行）按降幅排序，前几项为：col_10（normal 中位 21→ease 18；max 174→156）；col_11（normal 中位 21→ease 18；max 105→99）；col_13（normal 中位 18→ease 15；max 60→60）；col_14（normal 中位 18→ease 15；max 60→60）；col_17（normal 中位 15→ease 12；max 54→36）；col_18（normal 中位 15→ease 12；max 39→39）；col_19（normal 中位 15→ease 12；max 60→45）；col_20（normal 中位 12→ease 9；max 30→30）；col_21（normal 中位 12→ease 9；max 72→36）。可归纳：宽松模板在多个数值维度上系统性地低于普通模板；各列对应棋盘/目标/标记位仍需反编译对齐。",
           "以下列在全表范围内整数稀疏（任一侧 n 低于约 45% 行数），更像条件字段或仅部分关卡生效的参数，与专题页上 `n` 明显小于 2000 的现象一致：col_28（n_normal=22，n_ease=22）；col_27（n_normal=35，n_ease=35）；col_26（n_normal=53，n_ease=53）；col_25（n_normal=79，n_ease=79）；col_24（n_normal=113，n_ease=113）；col_23（n_normal=172，n_ease=172）；col_9（n_normal=201，n_ease=201）；col_22（n_normal=231，n_ease=230）；col_21（n_normal=332，n_ease=331）；col_8（n_normal=397，n_ease=397）；col_20（n_normal=429，n_ease=427）；col_19（n_normal=631，n_ease=630）；col_7（n_normal=784，n_ease=784）；col_18（n_normal=828，n_ease=826）。"
         ],
-        "schemaFieldSummary": [
-          "No (#1)",
-          "Name (#2)",
-          "Duration (#3)",
-          "Ease (#4)",
-          "Difficulty (#5)",
-          "Goals (#6)",
-          "Board (#7)",
-          "SeedRules (#8)"
-        ],
+        "schemaFieldSummary": [],
         "evidenceClasses": [
           "BaseLevelDataLoader",
           "ClientLevelAbProcessor",

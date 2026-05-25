@@ -132,6 +132,9 @@ def parse_csv_to_json(csv_path: Path, out_name: str, *, no_header_row: bool = Fa
         for i, key in enumerate(clean_header):
             row[key] = r[i] if i < len(r) else ""
         rows.append(row)
+    if out_name == "items.json":
+        for i, row in enumerate(rows):
+            row["ItemId"] = str(i)
     path = OUT / out_name
     path.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
     (PUBLIC_DATA / out_name).write_text(
@@ -575,6 +578,7 @@ def main() -> None:
         "scan_datapack_unitypy.py",
         "build_research_sqlite.py",
         "build_topic_analysis.py",
+        "build_item_sprite_index.py",
     ]
     if os.environ.get("SKIP_REMOTE_INGEST") == "1":
         post = [p for p in post if p != "fetch_remote_catalog.py"]

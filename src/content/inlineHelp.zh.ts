@@ -21,13 +21,24 @@ export const homeHelp = {
 export const itemsHelp = {
   header: `本表来自包内 items.csv 经 ingest 转成 items.json。每一行对应策划表里的一个「物品/元素」词条。
 
-这不是游戏运行时内存里的对象列表，而是静态策划数据。`,
+第一列 ItemId（ID）为行号从 0 起，与 .lvl 里 field 6/7 的子字段 1 相同。`,
   controls: `筛选框会在所有列里做子串匹配（不区分大小写）。导出 CSV 只导出当前筛选结果，方便放进 Excel。
 
-分页为减轻浏览器压力；总数以页眉「共 N 行」为准。`,
-  table: `列名与 CSV 原始表头一致。若某列为空，多半是源表该格为空。
+勾选「贴图预览」时通过 /api/item-sprite 读取本机导出的 PNG（需 npm run dev）。`,
+  table: `列名与 CSV 一致，并增加 ItemId。贴图列按 Name 匹配 sprites/{Name}.png。
 
-与关卡里「消除用图标」的对应关系要看 LevelItemData 等 Il2Cpp 枚举，本站不自动做映射。`,
+在「关卡配置说明」页可输入 ItemId 查看关卡目标与贴图对照。`,
+};
+
+export const levelGuideHelp = {
+  header: `用 ingest 样例关卡的 protoc --decode_raw 文本，解析 field 6（收集目标）与 field 7（棋盘投放），并按 ItemId 显示物品表字段与贴图。
+
+ItemId 不是关卡号：Level0852 是第 852 关，而 decode 里的 852 才是道具 ID。`,
+  fieldLegend: `对照说明见 docs/LEVEL_CONFIG_GUIDE.zh-CN.md。_00.lvl 管棋盘编码，_01.lvl 管时长与目标。`,
+  samplePicker: `下拉为 lvl_format_notes.json 里已 decode 的样例。也可自行粘贴 decode_raw 结果做实验。`,
+  goalsPreview: `每张卡片：ItemId、策划名、分类、数量，以及 itempack 导出贴图（本地 API 提供）。`,
+  rawBlock: `原始 decode_raw 便于与仓库脚本 decode_lvl_goals.py 对照。`,
+  idLookup: `输入任意 ItemId（逗号分隔）快速查物品与贴图，无需完整 .lvl 文件。`,
 };
 
 export const templatesHelp = {

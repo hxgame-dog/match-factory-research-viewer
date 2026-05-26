@@ -11,6 +11,7 @@ type GoalsPayload = {
   levelCount?: number;
   levels?: LevelPreviewEntry[];
   note?: string;
+  runtimeMismatchHint?: string;
 };
 
 export default function LevelPreviewPage() {
@@ -115,6 +116,11 @@ export default function LevelPreviewPage() {
             <code className="rounded bg-gray-100 px-1">public/sprites</code>；模板表仅显示时长/难度/数量列。
           </p>
           {payload.note && <p className="mt-2 text-xs text-gray-500">{payload.note}</p>}
+          {payload.runtimeMismatchHint && (
+            <p className="mt-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-950">
+              {payload.runtimeMismatchHint}
+            </p>
+          )}
         </div>
       </ModuleWithHelp>
 

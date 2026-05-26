@@ -33,6 +33,48 @@ def find_protoc() -> str | None:
     return None
 
 
+def _read_varint(data: bytes, i: int) -> tuple[int, int]:
+    v, s = 0, 0
+    while i < len(data):
+        b = data[i]
+        i += 1
+        v |= (b & 0x7F) << (s * 7)
+        s += 1
+        if not (b & 0x80):
+            break
+    return v, i
+
+
+def parse_level00_bytes(data: bytes) -> dict:
+    """直接从 *_00.lvl 二进制解析字段 2（目标数量字节）与字段 3（棋盘槽位字节）。"""
+    goal_counts: list[int] = []
+    board_slot_bytes: list[int] = []
+    level_id: int | None = None
+    i = 0
+    while i < len(data):
+        tag, i = _read_varint(data, i)
+        fn, wt = tag >> 3, tag & 7
+        if wt == 0:
+            v, i = _read_varint(data, i)
+            if fn == 1:
+                level_id = v
+        elif wt == 2:
+            ln, i = _read_varint(data, i)
+            chunk = data[i : i + ln]
+            i += ln
+            if fn == 2:
+                goal_counts = list(chunk)
+            elif fn == 3:
+                board_slot_bytes = list(chunk)
+        else:
+            break
+    return {
+        "levelId": level_id,
+        "goalCounts": goal_counts,
+        "boardSlotBytes": board_slot_bytes,
+    }
+
+
 def parse_decode_raw(text: str) -> dict:
     blocks = re.findall(r"(6|7)\s*\{\s*1:\s*(\d+)\s*2:\s*(\d+)\s*\}", text)
     collect, board = [], []
@@ -129,6 +171,11 @@ def main() -> None:
             continue
         text = proc.stdout.decode("utf-8", errors="replace")
         parsed = parse_decode_raw(text)
+        base00 = None
+        rel00 = rel.replace("_01.lvl", "_00.lvl")
+        path00 = ASSETS / rel00
+        if path00.is_file():
+            base00 = parse_level00_bytes(path00.read_bytes())
         entry = {
             "levelId": lid,
             "templateKey": parsed.get("templateKey"),
@@ -136,21 +183,25 @@ def main() -> None:
             "field5": parsed.get("field5"),
             "collectGoals": parsed["collectGoals"],
             "boardGoals": parsed["boardGoals"],
+            "base00": base00,
             "relativePath": rel,
+            "relativePath00": rel00 if path00.is_file() else None,
             "folder": pick.get("folder"),
             "templateNormal": tpl_normal.get(lid),
             "templateEase": tpl_ease.get(lid),
+            "dataSource": "static_bundle",
         }
         levels_out.append(entry)
         if i % 500 == 0:
             print(f"  已解析 {i}/{total} …")
 
     payload = {
-        "version": 1,
+        "version": 2,
         "generatedBy": "scripts/build_level_goals_index.py",
         "levelCount": len(levels_out),
         "parseErrors": errors,
-        "note": "collectGoals/boardGoals 来自 *_01.lvl；templateCounts 仅为模板表数量列，不含道具 ID。",
+        "note": "collectGoals/boardGoals 来自包内静态 *_01.lvl（ItemId=items.csv 行号）。可能与真机运行时关卡不一致（DynamicLevel/版本差异）。base00 来自 *_00.lvl。",
+        "runtimeMismatchHint": "若与游戏画面不符：优先怀疑动态关卡覆盖或显示关卡号≠LevelXXXX 资源号；数量以 base00.goalCounts / 模板 col_4+ 为准。",
         "levels": levels_out,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

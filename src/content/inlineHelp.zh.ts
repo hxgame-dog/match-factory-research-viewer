@@ -42,9 +42,9 @@ ItemId 不是关卡号：Level0852 是第 852 关，而 decode 里的 852 才是
 };
 
 export const levelPreviewHelp = {
-  header: `每关一张卡片：从 *_01.lvl 解析收集目标（field 6）与棋盘投放（field 7），用 ItemId 关联物品表与 public/sprites 贴图。
+  header: `每关一张卡片：从包内静态 *_01.lvl 解析 field 6/7，ItemId 按 items.csv 行号映射贴图。
 
-关卡模板表（normal）只补充时长、难度标记与 col_4+ 数量列——数量列不能单独推出是哪种道具，道具种类以 .lvl 为准。`,
+若与真机画面不一致（如第 15 关显示锤子但游戏里是两个泳装娃娃），通常不是解析错误，而是运行时 DynamicLevel 覆盖或版本差异；目标「数量」以对 *_00.lvl 的 goalCounts 与模板 col_4+ 为准。`,
   filters: `默认显示关卡 1–100，可改范围或搜索关卡号、模板名、道具名。每页 24 关，避免一次渲染数千卡片。
 
 全量索引需本地执行 python3 scripts/build_level_goals_index.py（约数千关，耗时数分钟）。`,

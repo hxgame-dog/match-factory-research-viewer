@@ -22,6 +22,11 @@ export type LevelPreviewEntry = {
     templateDifficulty?: string | null;
     templateCounts?: number[];
   } | null;
+  base00?: {
+    goalCounts?: number[];
+    boardSlotBytes?: number[];
+  } | null;
+  dataSource?: string;
 };
 
 type Props = {
@@ -70,8 +75,19 @@ export function LevelPreviewCard({
         </p>
       )}
 
+      {level.base00 && (level.base00.goalCounts?.length ?? 0) > 0 && (
+        <p className="mt-2 rounded-sm border border-amber-200 bg-amber-50 px-2 py-1.5 text-xs text-amber-900">
+          <strong>*_00.lvl</strong> 目标数量：[
+          {level.base00.goalCounts?.join(", ")}]（与游戏顶部目标数常一致；道具种类见下方 _01，可能与真机画面不符）
+        </p>
+      )}
+
+      <p className="mt-2 text-[10px] text-gray-400">
+        数据源：{level.dataSource === "static_bundle" ? "包内静态 .lvl" : "—"} · 运行时可能被 DynamicLevel 覆盖
+      </p>
+
       <div className="mt-3">
-        <h4 className="text-xs font-medium text-gray-700">收集目标（.lvl 字段 6）</h4>
+        <h4 className="text-xs font-medium text-gray-700">收集目标（*_01.lvl 字段 6 → ItemId）</h4>
         {level.collectGoals.length === 0 ? (
           <p className="mt-1 text-xs text-gray-400">无</p>
         ) : (

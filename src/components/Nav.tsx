@@ -7,6 +7,7 @@ const links = [
   { href: "/analysis", label: "专题分析" },
   { href: "/items", label: "物品表" },
   { href: "/level-guide", label: "关卡配置" },
+  { href: "/level-preview", label: "关卡预览" },
   { href: "/templates", label: "关卡模板" },
   { href: "/levels", label: "关卡索引" },
   { href: "/bundles", label: "资源分包" },

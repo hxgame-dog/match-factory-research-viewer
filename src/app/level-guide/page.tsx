@@ -101,7 +101,11 @@ export default function LevelGuidePage() {
           </p>
           <p className="mt-2 text-xs text-gray-500">
             贴图已托管在站点 <code className="rounded bg-gray-100 px-1">public/sprites/</code>（约
-            11MB），线上与本地均可预览。
+            11MB），线上与本地均可预览。批量浏览全部关卡请用{" "}
+            <a href="/level-preview" className="text-gray-700 underline">
+              关卡预览
+            </a>
+            （需 <code className="rounded bg-gray-100 px-1">npm run ingest:level-goals</code>）。
           </p>
         </div>
       </ModuleWithHelp>

@@ -41,6 +41,15 @@ ItemId 不是关卡号：Level0852 是第 852 关，而 decode 里的 852 才是
   idLookup: `输入任意 ItemId（逗号分隔）快速查物品与贴图，无需完整 .lvl 文件。`,
 };
 
+export const levelPreviewHelp = {
+  header: `每关一张卡片：从 *_01.lvl 解析收集目标（field 6）与棋盘投放（field 7），用 ItemId 关联物品表与 public/sprites 贴图。
+
+关卡模板表（normal）只补充时长、难度标记与 col_4+ 数量列——数量列不能单独推出是哪种道具，道具种类以 .lvl 为准。`,
+  filters: `默认显示关卡 1–100，可改范围或搜索关卡号、模板名、道具名。每页 24 关，避免一次渲染数千卡片。
+
+全量索引需本地执行 python3 scripts/build_level_goals_index.py（约数千关，耗时数分钟）。`,
+};
+
 export const templatesHelp = {
   header: `数据来自 level_templates_normal.csv 与 ease.csv。原始文件没有表头行，ingest 时自动命名为 col_0、col_1…
 

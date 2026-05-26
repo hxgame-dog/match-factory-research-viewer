@@ -579,6 +579,7 @@ def main() -> None:
         "build_research_sqlite.py",
         "build_topic_analysis.py",
         "build_item_sprite_index.py",
+        "build_level_goals_index.py",
     ]
     if os.environ.get("SKIP_REMOTE_INGEST") == "1":
         post = [p for p in post if p != "fetch_remote_catalog.py"]

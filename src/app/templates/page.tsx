@@ -60,6 +60,11 @@ export default function TemplatesPage() {
           <h2 className="font-serif text-lg font-semibold text-gray-900">关卡模板 CSV</h2>
           <p className="mt-1 text-sm text-gray-500">
             对比 `level_templates_normal` 与 `level_templates_ease`；表格列较多，此处截取前 24 列展示。全列导出见底部「本页导出」。
+            带贴图的关卡目标预览请用{" "}
+            <a href="/level-preview" className="text-gray-700 underline">
+              关卡预览
+            </a>
+            （需先执行 npm run ingest:level-goals）。
           </p>
           <div className="mt-4 flex gap-2">
             <button

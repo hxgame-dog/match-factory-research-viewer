@@ -13,6 +13,7 @@
     "ingest:il2cpp-hints": "python3 scripts/extract_il2cpp_hints.py",
     "export:itempack": "python3 scripts/export_addressables_textures.py",
     "ingest:item-index": "python3 scripts/build_item_sprite_index.py",
+    "ingest:level-goals": "python3 scripts/build_level_goals_index.py",
     "publish:sprites": "python3 scripts/publish_sprites_to_public.py"
   },
   "dependencies": {
